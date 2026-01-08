@@ -5,7 +5,7 @@ import { Header } from '../Components/Header'
 export const AuthLayout = () => {
   return (
     <>
-      <Header/>
+      {/* <Header/> */}
       <main>
         <Outlet/>
       </main>

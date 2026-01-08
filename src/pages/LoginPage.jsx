@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink , useNavigate} from 'react-router-dom';
 import { userAuth } from '../hooks/userAuth';
-import { Input } from './Input';
-import { Button } from './Button';
+import { Input } from '../Components/Input';
+import { Button } from '../Components/Button';
 import {jwtDecode} from "jwt-decode"
 
 export const LoginPage = () => {
@@ -49,7 +49,7 @@ export const LoginPage = () => {
       </form>
 
       <p style={{ textAlign: 'center', marginTop: '10px' }}>
-        ¿No tienes cuenta? <NavLink to="/auth/register">Regístrate aquí</NavLink>
+        ¿No tienes cuenta? <NavLink to="/register">Regístrate aquí</NavLink>
       </p>
     </>
   );

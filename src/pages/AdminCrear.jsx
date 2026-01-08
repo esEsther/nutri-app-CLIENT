@@ -28,7 +28,7 @@ export const AdminCrear = () => {
         try {
           await crearArticulo({titulo, contenido, imagen});
         } catch (error) {
-          console.error(error);
+          setError(error)
         }
     };
     

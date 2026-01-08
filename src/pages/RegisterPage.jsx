@@ -1,6 +1,6 @@
-import { Button } from "./Button"
+import { Button } from "../Components/Button"
 // import { FormContainer } from "../components/FormContainer"
-import { Input } from "./Input"
+import { Input } from "../Components/Input"
 import { userAuth } from "../hooks/userAuth"
 import { NavLink, useNavigate } from "react-router-dom"
 // import "./css/auth.css"
@@ -66,7 +66,7 @@ export const RegisterPage = () => {
             <Button text="Registrarse" type="submit" />
         </form>
         <p style={{ textAlign: "center", marginTop: "10px" }}>
-            ¿Ya tienes cuenta? <NavLink to="/auth/login">Inicia Session</NavLink>
+            ¿Ya tienes cuenta? <NavLink to="/login">Inicia Session</NavLink>
         </p>
     </>
     

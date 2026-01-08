@@ -8,6 +8,7 @@ export const Favoritos = () => {
     const[favoritos, setFavoritos] = useState([])
     const navigate = useNavigate()
     const urlBase = "http://localhost:7001"
+    const[error, setError] = useState('null')
     
     useEffect(() => {
         const fetchFavoritos = async () => {
@@ -22,7 +23,7 @@ export const Favoritos = () => {
                 setFavoritos(data.data);
             } catch (error) {
                 console.error(error);
-                return error
+                setError(error)
             }
         };
         fetchFavoritos();
@@ -37,14 +38,14 @@ export const Favoritos = () => {
         const resp = await eliminarDeFavoritos(id)
 
         if (resp?.ok !== false) {
-          setFavoritos(prev =>
+          setFavoritos(prev => //prev es la versión már reciente del estado
             prev.filter(fav => fav.id_articulo !== id)
           );
         }
 
     } catch (error) {
         console.log(error);
-        return error
+        setError(error)
     }
   }
 
@@ -63,7 +64,7 @@ export const Favoritos = () => {
             className="articulo-img"
           />
           <h3 className="articulo-title">{favorito.titulo}</h3>
-          {/* Render condicional si estamos en /user */}
+          
           
             <button 
               onClick={(ev) => { 

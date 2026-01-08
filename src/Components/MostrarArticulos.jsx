@@ -8,6 +8,7 @@ import {adminActions} from '../hooks/adminActions'
 export const MostrarArticulos = () => {
   const [articulos, setArticulos] = useState([]);
   // const [favoritos, setFavoritos] = useState([]);
+  const[error, setError] = useState(null)
   const navigate = useNavigate();
   const location = useLocation() //hook para saber la ruta actual.
   const isUserRoute = location.pathname.startsWith('/user') //true si estamos en /user
@@ -22,7 +23,7 @@ export const MostrarArticulos = () => {
         const data = await conectar('http://localhost:7001/inicio');
         setArticulos(data.data);
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
     fetchArticulos();
@@ -32,7 +33,7 @@ export const MostrarArticulos = () => {
     try {
       await guardarEnFavoritos(articuloId);
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -57,7 +58,7 @@ export const MostrarArticulos = () => {
         }
     } catch (error) {
         console.log(error)
-        return error
+        setError(error)
     }
     
   }

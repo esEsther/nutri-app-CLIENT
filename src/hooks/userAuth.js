@@ -51,19 +51,19 @@ export const userAuth = () => {
     const logoutUser = () =>{
         logout();
     }
-    const getRol = () =>{
-        // const { rol } = jwtDecode(token)
-        // console.log('este es el rol:', rol)
-        // return rol
-         if (!token) return null;
-        try {
-            const decoded = jwtDecode(token);
-            return decoded?.rol || null;
-        } catch (error) {
-            console.error('Error decodificando token:', error);
-            return null;
-        }
-    }
+    // const getRol = () =>{
+    //     // const { rol } = jwtDecode(token)
+    //     // console.log('este es el rol:', rol)
+    //     // return rol
+    //      if (!token) return null;
+    //     try {
+    //         const decoded = jwtDecode(token);
+    //         return decoded?.rol || null;
+    //     } catch (error) {
+    //         console.error('Error decodificando token:', error);
+    //         return null;
+    //     }
+    // }
 
     const guardarEnFavoritos = async(id)=> {
         try {
@@ -109,7 +109,7 @@ export const userAuth = () => {
     logoutUser,
     user,
     error,
-    getRol,
+    // getRol,
     token,
     guardarEnFavoritos,
     eliminarDeFavoritos

@@ -13,31 +13,37 @@ export const AdminEditar = () => {
   const urlBase = import.meta.env.VITE_BACKEND_URL
 
 
-  // useEffect(()=>{
-  //   const fetchArticulo = async () => {
-  //           try {
-  //               const resp = await conectar(`${urlBase}/admin/articulo/${id}`,
-  //                   'GET',
-  //                   null,
-  //                   token
-  //               )
+  useEffect(()=>{
+    const fetchArticulo = async () => {
+            try {
+                const resp = await conectar(`${urlBase}/admin/articulo/${id}`,
+                    'GET',
+                    null,
+                    token
+                )
+                console.log(resp, 'resp desde fetch articulo')
+                if (!resp) {
+                     setError("error al cargar el artículo")
+                     return
+                }
 
-  //               if (!resp.ok) {
-  //                   return setError("error al cargar el artículo")
-  //               }
+                
+                 setArticulo({
+                    titulo: resp.titulo,
+                    contenido: resp.contenido,
+                    });
+                    console.log(resp.imagen)
+                setImagen(resp.imagen)
+                
+                
 
-  //               const data = await resp.json()
-  //                setArticulo({
-  //                   titulo: data.titulo,
-  //                   contenido: data.contenido,
-  //                   });
-  //          } catch (error) {
-  //              setError(error.message);
-  //       };
+           } catch (error) {
+               setError(error.message);
+        };
 
-  //       } 
-  //   fetchArticulo();
-  // }, [id]);
+        } 
+    fetchArticulo();
+  }, [id,token]);
 
   const handleImageChange = (e) => {
     setImagen(e.target.files[0]);
@@ -52,11 +58,14 @@ export const AdminEditar = () => {
 
   const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log('hola desde handleSubmit', articulo, imagen)
         setError(null);
         try {
-          await editarArticulo({titulo: articulo.titulo,
+          await editarArticulo({id,
+                                titulo: articulo.titulo,
                                 contenido: articulo.contenido,
                                 imagen})
+          
         } catch (error) {
           console.log(error)
         }
@@ -82,6 +91,18 @@ export const AdminEditar = () => {
 
         <label>Imagen</label>
         <input type="file" onChange={handleImageChange} />
+        {imagen && typeof imagen === "string" && (
+            <img
+            //   src={imagen}
+            //   alt="Imagen actual"
+            // />
+            src={typeof imagen === "string"
+              ? imagen
+              : URL.createObjectURL(imagen)}
+            alt="Imagen del artículo"
+            style={{ maxWidth: "300px" }}
+          />
+          )}
 
         <label>Contenido</label>
         <textarea

@@ -1,30 +1,23 @@
 import { Routes, Route} from 'react-router-dom'
 import { HomePage } from '../Components/HomePage'
 import { ArticuloDetalle } from '../Components/ArticuloDetalle'
-import { LoginPage } from '../Components/LoginPage'
 import { Proteccion } from '../Components/PublicProtection'
 import { AuthLayout } from './AuthLayout'
-import { RegisterPage } from '../Components/RegisterPage'
-import { MostrarArticulos } from '../Components/MostrarArticulos'
+import { RegisterPage } from '../pages/RegisterPage'
 import { BuscarArticulo } from '../pages/UserBuscar'
 import { Favoritos } from '../pages/UserFavoritos'
 import { AdminCrear } from '../pages/AdminCrear'
 import { AdminEditar } from '../pages/AdminEditar'
+import { LoginPage } from '../pages/LoginPage'
 
 export const AppRoutes = () => {
     return (
         <Routes>
-      <Route path="/" element={<AuthLayout />}>
-      <Route path='inicio' element={<HomePage />} />
-      <Route path="articulo/:id" element={<ArticuloDetalle />} />
-       </Route>
-
-       
+      <Route path='/' element={<HomePage />} />
+      <Route path="/articulo/:id" element={<ArticuloDetalle />} />
+      <Route path="/login" element={<LoginPage />}/>
+      <Route path="/register" element={<RegisterPage />}/>
       
-      <Route path="/auth" element={<AuthLayout />}>
-        <Route path="login" element={<LoginPage />}/>
-        <Route path="register" element={<RegisterPage />}/>
-      </Route>
 
       <Route path="/user" element={<Proteccion>
                                       <AuthLayout />

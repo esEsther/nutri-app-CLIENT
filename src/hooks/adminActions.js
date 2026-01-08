@@ -51,31 +51,48 @@ export const adminActions = () => {
     }
 
    
-    const editarArticulo = async ({titulo, contenido, imagen}) => {
+    const editarArticulo = async ({id, titulo, contenido, imagen}) => {
+        console.log('hola desde editar artículo hook')
         try {
             const formData = new FormData();
             formData.append("titulo", titulo);
             formData.append("contenido", contenido);
-            formData.append("imagen", imagen);
+            if (imagen instanceof File) {
+                formData.append("imagen", imagen);
+            }
+            console.log([...formData.entries()]);
+
+            // console.log('formData desde el hook editar: ', formData)
             
 
-            const resp = await fetch(`${API_BASE_URL}/editArticle/${id}`, {
-                                    method: "POST",
+            const resp = await fetch(`${urlBase}/admin/editarArticulo/${id}`, {
+                                    method: "PUT",
                                     body: formData,
-                                    headers: token ? { Authorization: `Bearer ${token}` } : {},
+                                    headers: {
+                                        ...(token ? { Authorization: `Bearer ${token}` } : {})
+                                    },
+                                    // headers: token ? { Authorization: `Bearer ${token}` } : {},
                                     });
+            console.log('Esta es la resp del fetch', resp)
+            // console.log("RESP STATUS", resp.status, resp.ok);
+
+            // try {
+            // const data = await resp.json();
+            // console.log("RESP JSON", data);
+            // } catch(e) {
+            // console.log("No hay JSON de respuesta", e);
+            // }
 
             if (!resp.ok) {
+                //   const errorData = await resp.json().catch(() => ({}));
                 const errorData = await resp.json();
                 throw new Error(errorData.msg || "Error al actualizar el artículo");
             }
 
-            navigate("/admin/articles");
+            navigate("/admin/todosLosArticulos");
         } catch (error) {
             setError(error.message);
-        } finally {
-            setSaving(false);
-        }
+        } 
     };
 
     const eliminarArticulo = async(id) => {

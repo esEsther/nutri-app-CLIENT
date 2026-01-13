@@ -5,7 +5,7 @@ import conectar from '../helpers/fetch';
 import { UserAction } from '../hooks/userAction';
 import { UserContext } from '../contexts/UserContext';
 
-export const Favoritos = () => {
+export const RecetasFavoritas = () => {
 
     const {urlBase} = useContext(UserContext)
     const {token} = userAuth()
@@ -13,14 +13,14 @@ export const Favoritos = () => {
     const[favoritos, setFavoritos] = useState([])
     const navigate = useNavigate()
     const[error, setError] = useState('null')
-    const id_receta = null
+    const id_articulo = null
     
     useEffect(() => {
         const fetchFavoritos = async () => {
         
             try {
                 const data = await conectar(
-                    `${urlBase}/user/favoritos/articulo`,
+                    `${urlBase}/user/favoritos/receta`,
                     'GET',
                     null,
                     token
@@ -35,7 +35,7 @@ export const Favoritos = () => {
     }, []);
 
     const irDetalle = (id) => {
-    navigate(`/articulo/${id}`);
+    navigate(`/detalleReceta/${id}`);
   };
 
   const handleFavorito = async(id_articulo, id_receta) => {
@@ -44,7 +44,7 @@ export const Favoritos = () => {
 
         if (resp?.ok !== false) {
           setFavoritos(prev => //prev es la versión már reciente del estado
-            prev.filter(fav => fav.id_articulo !== id_articulo)
+            prev.filter(fav => fav.id_receta !== id_receta)
           );
         }
 
@@ -58,15 +58,16 @@ export const Favoritos = () => {
     }
   }
 
+   console.log(favoritos)
 
   return (
     <>
-    <p className='pcrear'>Mis artículos favoritos</p>
+    <p className='pcrear'>Mis Recetas Favoritas</p>
     <div className="articulos-container">
       {favoritos.map((favorito) => (
         <div
-          key={favorito.id_articulo}
-          onClick={() => irDetalle(favorito.id_articulo)}
+          key={favorito.id_receta}
+          onClick={() => irDetalle(favorito.id_receta)}
           className="articulo-card"
         >
           <img
@@ -80,7 +81,7 @@ export const Favoritos = () => {
             <button 
               onClick={(ev) => { 
                 ev.stopPropagation(); // evita que se active el navigate
-                handleFavorito(favorito.id_articulo);
+                handleFavorito(favorito.id_receta);
               }}
             >
               Eliminar de Favoritos

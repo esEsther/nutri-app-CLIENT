@@ -1,26 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import conectar from '../helpers/fetch';
 import './css/MostrarArticulos.css';
 import {userAuth} from '../hooks/userAuth'
 import {adminActions} from '../hooks/adminActions'
+import { UserAction } from '../hooks/userAction';
+import { Botones } from './Botones';
+import { UserContext } from '../contexts/UserContext';
 
 export const MostrarArticulos = () => {
   const [articulos, setArticulos] = useState([]);
-  // const [favoritos, setFavoritos] = useState([]);
   const[error, setError] = useState(null)
   const navigate = useNavigate();
   const location = useLocation() //hook para saber la ruta actual.
   const isUserRoute = location.pathname.startsWith('/user') //true si estamos en /user
   const isAdminRoute = location.pathname.startsWith('/admin') //true si estamos en admin
-  const {guardarEnFavoritos} = userAuth()
+  const {guardarEnFavoritos, guardarRecetaEnBd,} = UserAction()
+  const {getRol}=userAuth()
   const {eliminarArticulo} = adminActions()
-
+  const idReceta = null
+  const rol =getRol()
 
   useEffect(() => {
     const fetchArticulos = async () => {
       try {
         const data = await conectar('http://localhost:7001/inicio');
+        
         setArticulos(data.data);
       } catch (error) {
         console.log(error);
@@ -29,39 +34,26 @@ export const MostrarArticulos = () => {
     fetchArticulos();
   }, []);
 
-   const handleFavorito = async (articuloId) => {
-    try {
-      await guardarEnFavoritos(articuloId);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-
-
+  //  const handleFavorito = async (articuloId, idReceta) => {
+  //   try {
+  //     await guardarEnFavoritos(articuloId, idReceta);
+  //     if(idReceta) {
+  //       await guardarRecetaEnBd(idReceta)
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const irDetalle = (id) => {
     navigate(`/articulo/${id}`);
   };
 
-    const handleEditarArticulo = (id) => {
-    navigate(`/admin/editarArticulo/${id}`);
-  };
-  
-  const handleEliminarArticulo= async(id) => {
-    try {
-      const resp = await eliminarArticulo(id)
-      if (resp?.ok !== false) {
-          setArticulos(prev =>
-            prev.filter(art => art.id_articulo !== id)
-          );
-        }
-    } catch (error) {
-        console.log(error)
-        setError(error)
-    }
-    
-  }
+  const handleEliminarArticulo = (id) => {
+  setArticulos(prev => prev.filter(art => art.id_articulo !== id));
+};
+
+ 
 
   return (
     <div className="articulos-container">
@@ -78,42 +70,10 @@ export const MostrarArticulos = () => {
           />
           <h3 className="articulo-title">{articulo.titulo}</h3>
 
-          {/* Botón favoritos si estamos en /user */}
-          {isUserRoute && (
-            <button 
-              onClick={(ev) => { 
-                ev.stopPropagation(); // evita que se active el navigate
-                handleFavorito(articulo.id_articulo);
-              }}
-            >
-              Guardar en Favoritos
-            </button>
-          )}
-
-          {/* Botones editar y eliminar si estamos en /admin */}
-          {isAdminRoute && (
-            <>
-            <button 
-              onClick={(ev) => { 
-                ev.stopPropagation(); // evita que se active el navigate
-                handleEditarArticulo(articulo.id_articulo);
-              }}
-            >
-              Editar
-            </button>
-            <button 
-              onClick={(ev) => { 
-                ev.stopPropagation(); // evita que se active el navigate
-                handleEliminarArticulo(articulo.id_articulo);
-              }}
-            >
-              Eliminar
-            </button>
-          </>
-          )}
+          <Botones rol={rol} id_articulo={articulo.id_articulo} onEliminar={handleEliminarArticulo}/>
                 </div>
               ))}
+              
     </div>
   );
 };
-

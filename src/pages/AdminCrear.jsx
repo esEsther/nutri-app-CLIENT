@@ -1,17 +1,26 @@
-import React, { useState } from 'react'
-import {useNavigate} from 'react-router-dom'
-import {adminActions} from '../hooks/adminActions'
+
+import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { adminActions } from '../hooks/adminActions';
+import JoditEditor from 'jodit-react';
+
+import { EditorDetexto } from '../Components/EditorDeTexto';
+import { Input } from '../Components/Input';
+import { Errores } from '../Components/Errores';
+
 
 export const AdminCrear = () => {
-    const navigate = useNavigate()
-    const {crearArticulo} = adminActions()
+    const navigate = useNavigate();
+    const { crearArticulo } = adminActions();
 
-    const [titulo, setTitulo] = useState('')
-    const [imagen, setImagen] = useState(null)
-    const [contenido, setContenido] = useState('')
+    const [titulo, setTitulo] = useState('');
+    const [imagen, setImagen] = useState(null);
+    const [contenido, setContenido] = useState('');
 
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+
+    const editor = useRef(null); // referencia al editor
 
 
     const handleSubmit = async (e) => {
@@ -26,59 +35,56 @@ export const AdminCrear = () => {
         setError(null);
 
         try {
-          await crearArticulo({titulo, contenido, imagen});
+            await crearArticulo({ titulo, contenido, imagen });
+            navigate(`/admin/todosLosArticulos`)
         } catch (error) {
-          setError(error)
+            setError(error.message || "Error al crear el artículo");
+        } finally {
+            setLoading(false);
         }
     };
-    
-  return (
-    <main className="containerCrear">
-      <p className="tituloWeb">Crear un Artículo</p>
 
-      {error && (
-        <p style={{ color: "red", padding: "10px", border: "1px solid red", marginBottom: "15px" }}>
-          {error}
-        </p>
-      )}
+    return (
+        <main className="containerCrear">
+            <p className='pcrear'>Crear un Artículo</p>
 
-      
-      <form className="formularioCrear" onSubmit={handleSubmit} encType="multipart/form-data">
-        <label htmlFor="titulo">Título</label>
-        <input
-          type="text"
-          id="titulo"
-          value={titulo}
-          onChange={(e) => setTitulo(e.target.value)}
-          required
-        />
+            {error && (
+                <Errores mensaje={error} />
+            )}
 
-        <label htmlFor="imagen">Imagen del Artículo</label>
-        <input
-          type="file" //para que se carge
-          id="imagen"
-          name="imagen"
-          accept="image/*" //Limita el selector para que solo muestre imágenes.Incluye .png, .jpg, .jpeg, .gif
-          onChange={(e) => setImagen(e.target.files[0])}
-          required
-        />
+            <form className="formularioCrear" onSubmit={handleSubmit} encType="multipart/form-data">
+                <label htmlFor="titulo">Título</label>
+                <input
+                    type="text"
+                    id="titulo"
+                    value={titulo}
+                    onChange={(e) => setTitulo(e.target.value)}
+                    required
+                />
 
+                <label htmlFor="imagen">Imagen del Artículo</label>
+                <input
+                    type="file"
+                    id="imagen"
+                    name="imagen"
+                    accept="image/*"
+                    onChange={(e) => setImagen(e.target.files[0])}
+                    required
+                />
 
+                <label htmlFor="contenido">Cuerpo del artículo</label>
+               
+                <EditorDetexto id='editor'
+                    ref={editor}
+                    value={contenido}
+                    onBlur={(newContent) => setContenido(newContent)}
+                />
+               
 
-
-        <label htmlFor="contenido">Cuerpo del artículo</label>
-        <textarea
-          id="contenido"
-          rows="20"
-          value={contenido}
-          onChange={(e) => setContenido(e.target.value)}
-          required
-        />
-
-        <button type="submit" className="btn" disabled={loading}>
-          {loading ? "Guardando..." : "Guardar Articulo"}
-        </button>
-      </form>
-    </main>   
-  )
-}
+                <button type="submit" className="btn" disabled={loading}>
+                    {loading ? "Guardando..." : "Guardar Artículo"}
+                </button>
+            </form>
+        </main>
+    );
+};

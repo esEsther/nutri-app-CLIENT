@@ -20,8 +20,8 @@ export const LoginPage = () => {
     // await loginUser(datos);
     const { usuario, token: tokenRecibido} = await loginUser(datos);
 
-    // Si el login fue exitoso, redirige según rol
-    if ( tokenRecibido) { // el token se setea en el Provider
+  
+    if ( tokenRecibido) { 
       console.log(token)
       const rol = jwtDecode(tokenRecibido).rol;
       console.log('este es el rol en loginpage: ', rol)
@@ -36,11 +36,11 @@ export const LoginPage = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <Input type="text" name="email" placeholder="Tu correo aquí" />
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <Input type="text" name="email" placeholder="Email" />
         {error?.email && <p className="error">{error.email.msg}</p>}
 
-        <Input type="password" name="password" placeholder="Tu contraseña aquí" />
+        <Input type="password" name="password" placeholder="Contraseña" />
         {error?.contrasenia && <p className="error">{error.contrasenia.msg}</p>}
 
         {error?.msg && <p className="error">{error.msg}</p>}
@@ -48,7 +48,7 @@ export const LoginPage = () => {
         <Button text="Iniciar Sesión" type="submit" />
       </form>
 
-      <p style={{ textAlign: 'center', marginTop: '10px' }}>
+      <p>
         ¿No tienes cuenta? <NavLink to="/register">Regístrate aquí</NavLink>
       </p>
     </>

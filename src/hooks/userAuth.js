@@ -4,11 +4,11 @@ import conectar from "../helpers/fetch"
 import {jwtDecode} from "jwt-decode"
 
 
-const urlBase = import.meta.env.VITE_BACKEND_URL
+
 
 export const userAuth = () => {
 
-    const {login, register, logout, user, token} = useContext(UserContext)
+    const {login, register, logout, user, token, urlBase} = useContext(UserContext)
     const [error, setError] =useState(null)
     
 
@@ -20,8 +20,6 @@ export const userAuth = () => {
 
         if (ok) {
             login(user, token)
-            // const rol = jwtDecode(token).rol; // usar token recibido directamente del login, no del estado
-            // console.log('rol después de login:', rol);
             return { usuario: user, token, ok : true };
         } else {
             const errors = usuario.errors || usuario
@@ -51,54 +49,21 @@ export const userAuth = () => {
     const logoutUser = () =>{
         logout();
     }
-    // const getRol = () =>{
-    //     // const { rol } = jwtDecode(token)
-    //     // console.log('este es el rol:', rol)
-    //     // return rol
-    //      if (!token) return null;
-    //     try {
-    //         const decoded = jwtDecode(token);
-    //         return decoded?.rol || null;
-    //     } catch (error) {
-    //         console.error('Error decodificando token:', error);
-    //         return null;
-    //     }
-    // }
-
-    const guardarEnFavoritos = async(id)=> {
+    const getRol = () =>{
+        // const { rol } = jwtDecode(token)
+        // console.log('este es el rol:', rol)
+        // return rol
+         if (!token) return null;
         try {
-            const resp = await conectar(
-                `${urlBase}/user/anadirFavoritos`,
-                'POST',
-                { id_articulo: id }, //enviamos el body
-                token
-            );
-
-            console.log('Guardado en favoritos:', resp);
-            return resp;
-
+            const decoded = jwtDecode(token);
+            return decoded?.rol || null;
         } catch (error) {
-            console.error('Error al guardar favorito:', error.message);
-            return error;
+            console.error('Error decodificando token:', error);
+            return null;
         }
-     };
-
-    const eliminarDeFavoritos = async(id) => {
-        try {
-            const resp = await conectar(
-               `${urlBase}/user/deleteFavorito/${id}`,
-                'DELETE',
-                null,
-                token 
-            )
-            return resp
-            // console.log('Articulo eliminado de favoritos',  resp)
-        } catch (error) {
-            console.log(error, 'Ha habido un error al eliminar favoritos')
-            return error
-        }
-
     }
+
+ 
  
 
 
@@ -109,10 +74,8 @@ export const userAuth = () => {
     logoutUser,
     user,
     error,
-    // getRol,
-    token,
-    guardarEnFavoritos,
-    eliminarDeFavoritos
+    getRol,
+    token
     }
 }
 

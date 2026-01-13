@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 700px;
+  max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
   text-align: center;
+
 }
 
 .back-btn {
@@ -13,7 +14,7 @@
   margin-bottom: 20px;
   padding: 8px 16px;
   font-size: 1rem;
-  background-color: #007bff;
+  background-color: #d563ca;
   color: white;
   border: none;
   border-radius: 5px;
@@ -21,7 +22,7 @@
 }
 
 .back-btn:hover {
-  background-color: #0056b3;
+  background-color: #950f78;
 }
 
 .detalle-title {

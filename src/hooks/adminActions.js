@@ -11,10 +11,7 @@ const urlBase = import.meta.env.VITE_BACKEND_URL
 export const adminActions = () => {
 
     const { user, token} = useContext(UserContext)
-    const [error, setError] =useState(null)
-   
-    
-    
+    const [error, setError] =useState(null) 
     const navigate = useNavigate()
 
     const crearArticulo = async ({titulo, contenido, imagen}) => {
@@ -38,9 +35,6 @@ export const adminActions = () => {
                 setError(msg);
                 return;
             }
-
-            //   navigate(-1)
-            navigate('/admin/todosLosArticulos');
 
         } catch (error) {
             console.error("Error al crear película:", error);
@@ -73,23 +67,15 @@ export const adminActions = () => {
                                     },
                                     // headers: token ? { Authorization: `Bearer ${token}` } : {},
                                     });
-            console.log('Esta es la resp del fetch', resp)
-            // console.log("RESP STATUS", resp.status, resp.ok);
-
-            // try {
-            // const data = await resp.json();
-            // console.log("RESP JSON", data);
-            // } catch(e) {
-            // console.log("No hay JSON de respuesta", e);
-            // }
-
+            // console.log('Esta es la resp del fetch', resp)
+            
             if (!resp.ok) {
-                //   const errorData = await resp.json().catch(() => ({}));
                 const errorData = await resp.json();
                 throw new Error(errorData.msg || "Error al actualizar el artículo");
             }
 
-            navigate("/admin/todosLosArticulos");
+            navigate(`/articulo/${id}`);
+            return resp
         } catch (error) {
             setError(error.message);
         } 
@@ -108,8 +94,52 @@ export const adminActions = () => {
             console.log(error, 'Ha habido un error al eliminar el artículo'       )
             return error
         }
+    }   
+
+    const eliminarUsuario = async (id) => {
+          try {
+            const resp = await conectar(`${urlBase}/admin/eliminarUsuario/${id}`,
+                                        'DELETE',
+                                        null,
+                                        token
+                                        )
+             return resp                           
+                                        
+        } catch (error) {
+            console.log(error, 'Ha habido un error al eliminar el artículo'       )
+            return error
+        }
     }
 
+    const editarUsuario = async (datos)  => {
+        try {
+            const {id, ...body} = datos
+            const resp = await conectar(`${urlBase}/admin/editarUsuario/${id}`,
+                                        'PUT',
+                                        body,
+                                        token
+            )
+            //  if (!resp || resp.ok === false) {
+            //     // resp.ok puede venir del backend o de conectar
+            //     throw new Error(resp?.msg || "Error al actualizar el usuario");
+            // }
+            // console.log({resp}, 'desde el hook editar')
+            return resp
+        } catch (error) {
+            console.log(error, 'Ha habido un error al actualizar el usuario' )
+            setError(error)
+        }
+    }
+
+    const crearUsuario = async (datos) => {
+        try {
+            const resp = await conectar(`${urlBase}/admin/crearUsuario`, 'POST', datos, token)
+            return resp
+        } catch (error) {
+            console.log(error, 'error desde el hook crear usuario')
+            setError(error)
+        }
+    }
 
 
   return {
@@ -118,7 +148,10 @@ export const adminActions = () => {
     token,
     crearArticulo,
     editarArticulo,
-    eliminarArticulo
+    eliminarArticulo,
+    eliminarUsuario,
+    editarUsuario,
+    crearUsuario
     }
 }
 

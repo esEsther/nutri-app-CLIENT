@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef, forwardRef } from "react"
 import { useParams } from "react-router-dom"
 import conectar from "../helpers/fetch"
 import { adminActions } from "../hooks/adminActions"
+import { EditorDetexto } from "../Components/EditorDeTexto"
+import { Errores } from "../Components/Errores"
 
 export const AdminEditar = () => {
   const { id } = useParams();
@@ -11,6 +13,9 @@ export const AdminEditar = () => {
   const {editarArticulo,token,user } = adminActions()
   const [error, setError] =useState(null)
   const urlBase = import.meta.env.VITE_BACKEND_URL
+  const [titulo, setTitulo] = useState('');
+  const [contenido, setContenido] = useState('');
+  const editor = useRef(null);
 
 
   useEffect(()=>{
@@ -32,8 +37,9 @@ export const AdminEditar = () => {
                     titulo: resp.titulo,
                     contenido: resp.contenido,
                     });
-                    console.log(resp.imagen)
+                  
                 setImagen(resp.imagen)
+                setContenido(resp.contenido)
                 
                 
 
@@ -45,6 +51,7 @@ export const AdminEditar = () => {
     fetchArticulo();
   }, [id,token]);
 
+  
   const handleImageChange = (e) => {
     setImagen(e.target.files[0]);
   };
@@ -54,6 +61,7 @@ export const AdminEditar = () => {
         ...articulo,
         [e.target.name]: e.target.value,
         });
+        
     };
 
   const handleSubmit = async (e) => {
@@ -61,25 +69,27 @@ export const AdminEditar = () => {
         console.log('hola desde handleSubmit', articulo, imagen)
         setError(null);
         try {
-          await editarArticulo({id,
+         const resp =  await editarArticulo({id,
                                 titulo: articulo.titulo,
                                 contenido: articulo.contenido,
                                 imagen})
+                       
           
         } catch (error) {
           console.log(error)
+          setError({ mensaje: 'Error al editar el artículo, detalles}'})
         }
   }
 
-  if (error) return <p className="error">{error}</p>;
+  // if (error) return <p className="error">{error}</p>;
 
   return (
-    <main className="containerEditar">
-      <p className="tituloWeb">Editar artículo</p>
+    <main className="containerCrear">
+      <p className="pcrear">Editar artículo</p>
 
-      {error && <p className="error">{error}</p>}
+      {error && (<Errores mensaje={error.mensaje} /> )}
 
-      <form className="formEditar" onSubmit={handleSubmit}>
+      <form className="formularioCrear" onSubmit={handleSubmit}>
         <label>Título</label>
         <input
           type="text"
@@ -99,19 +109,19 @@ export const AdminEditar = () => {
             src={typeof imagen === "string"
               ? imagen
               : URL.createObjectURL(imagen)}
-            alt="Imagen del artículo"
+            alt={articulo.titulo}
             style={{ maxWidth: "300px" }}
           />
           )}
 
         <label>Contenido</label>
-        <textarea
-          name="contenido"
-          rows="8"
-          value={articulo.contenido}
-          onChange={handleChange}
-          required
-        />
+       
+        <EditorDetexto id='editor'
+           ref={editor}
+           value={articulo.contenido}
+           onBlur={(newContent) => setArticulo(prev => ({ ...prev, contenido: newContent }))} // actualizamos el articulo directamente
+         />
+
 
         <button >
           Guardar Cambios

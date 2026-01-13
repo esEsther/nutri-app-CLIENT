@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-// import './Errores.css'
+// import './css/Error.css'
 
 export const Errores = ({ mensaje = 'Ha ocurrido un error', detalles }) => {
   return (

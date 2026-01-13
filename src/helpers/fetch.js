@@ -1,3 +1,6 @@
+  const apiKeySpooncular = import.meta.env.VITE_SPOONCULAR;
+
+
 const conectar = async (urlApi, method = 'GET', body = null, token = null) => { //(ponemos unas variables por defecto)
   try {
     const options = {
@@ -7,6 +10,9 @@ const conectar = async (urlApi, method = 'GET', body = null, token = null) => { 
       },
     };
 
+    if(urlApi.includes('information')){
+      options.headers['x-api-key'] = apiKeySpooncular
+    }
     if (token) {
       options.headers.Authorization = `Bearer ${token}`; //añade a los headers la autorización
       options.credentials = 'include'; //  "Para esta solicitud, incluye mis credenciales (como cookies, encabezados de autorización, certificados)"
@@ -15,9 +21,9 @@ const conectar = async (urlApi, method = 'GET', body = null, token = null) => { 
     if (body && ['POST', 'PUT'].includes(method)) {
       options.body = JSON.stringify(body); //se envía el body hecho cadena
     }
-
+    console.log('antes de hacer fetch')
     const resp = await fetch(urlApi, options);
-    // const datos = await resp.json();
+    console.log({resp}, 'después de hacer fetch')
 
     //hay acciones que no tiene por que devolver un json
     let datos = null;
@@ -30,11 +36,10 @@ const conectar = async (urlApi, method = 'GET', body = null, token = null) => { 
         datos = null;
       }
     }
-    
 
-    // if (!resp.ok) {
-    //   return new Error(datos.message || 'Error en la petición');
-    // }
+    if (!resp.ok) {
+      return new Error(datos.message || 'Error en la petición');
+    }
 
     return datos;
 

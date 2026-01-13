@@ -36,10 +36,13 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-hooks", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:7.0.1"],\
           ["eslint-plugin-react-refresh", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:0.4.26"],\
           ["globals", "npm:16.5.0"],\
+          ["interweave", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:13.1.1"],\
+          ["jodit-react", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:5.2.38"],\
           ["js-cookie", "npm:3.0.5"],\
           ["jwt-decode", "npm:4.0.0"],\
           ["prop-types", "npm:15.8.1"],\
           ["react", "npm:19.2.3"],\
+          ["react-burger-menu", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:3.1.0"],\
           ["react-dom", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:19.2.3"],\
           ["react-router-dom", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:7.11.0"],\
           ["vite", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:7.3.0"],\
@@ -1185,6 +1188,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["amdefine", [\
+      ["npm:1.0.1", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/amdefine-npm-1.0.1-40b219807a-10c0.zip/node_modules/amdefine/",\
+        "packageDependencies": [\
+          ["amdefine", "npm:1.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["ansi-styles", [\
       ["npm:4.3.0", {\
         "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/ansi-styles-npm-4.3.0-245c7d42c7-10c0.zip/node_modules/ansi-styles/",\
@@ -1200,6 +1212,27 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/argparse-npm-2.0.1-faff7999e6-10c0.zip/node_modules/argparse/",\
         "packageDependencies": [\
           ["argparse", "npm:2.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["ast-transform", [\
+      ["npm:0.0.0", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/ast-transform-npm-0.0.0-348b0d5d2d-10c0.zip/node_modules/ast-transform/",\
+        "packageDependencies": [\
+          ["ast-transform", "npm:0.0.0"],\
+          ["escodegen", "npm:1.2.0"],\
+          ["esprima", "npm:1.0.4"],\
+          ["through", "npm:2.3.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["ast-types", [\
+      ["npm:0.7.8", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/ast-types-npm-0.7.8-fe8dac7941-10c0.zip/node_modules/ast-types/",\
+        "packageDependencies": [\
+          ["ast-types", "npm:0.7.8"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1229,6 +1262,28 @@ const RAW_RUNTIME_STATE =
           ["balanced-match", "npm:1.0.2"],\
           ["brace-expansion", "npm:1.1.12"],\
           ["concat-map", "npm:0.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["browser-resolve", [\
+      ["npm:1.11.3", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/browser-resolve-npm-1.11.3-c550b74990-10c0.zip/node_modules/browser-resolve/",\
+        "packageDependencies": [\
+          ["browser-resolve", "npm:1.11.3"],\
+          ["resolve", "patch:resolve@npm%3A1.1.7#optional!builtin<compat/resolve>::version=1.1.7&hash=3bafbf"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["browserify-optional", [\
+      ["npm:1.0.1", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/browserify-optional-npm-1.0.1-0023aad972-10c0.zip/node_modules/browserify-optional/",\
+        "packageDependencies": [\
+          ["ast-transform", "npm:0.0.0"],\
+          ["ast-types", "npm:0.7.8"],\
+          ["browser-resolve", "npm:1.11.3"],\
+          ["browserify-optional", "npm:1.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1301,6 +1356,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/chownr-npm-3.0.0-5275e85d25-10c0.zip/node_modules/chownr/",\
         "packageDependencies": [\
           ["chownr", "npm:3.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["classnames", [\
+      ["npm:2.5.1", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/classnames-npm-2.5.1-c7273f3423-10c0.zip/node_modules/classnames/",\
+        "packageDependencies": [\
+          ["classnames", "npm:2.5.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1485,11 +1549,33 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["escape-html", [\
+      ["npm:1.0.3", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/escape-html-npm-1.0.3-376c22ee74-10c0.zip/node_modules/escape-html/",\
+        "packageDependencies": [\
+          ["escape-html", "npm:1.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["escape-string-regexp", [\
       ["npm:4.0.0", {\
         "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/escape-string-regexp-npm-4.0.0-4b531d8d59-10c0.zip/node_modules/escape-string-regexp/",\
         "packageDependencies": [\
           ["escape-string-regexp", "npm:4.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["escodegen", [\
+      ["npm:1.2.0", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/escodegen-npm-1.2.0-7b080d0dc7-10c0.zip/node_modules/escodegen/",\
+        "packageDependencies": [\
+          ["escodegen", "npm:1.2.0"],\
+          ["esprima", "npm:1.0.4"],\
+          ["estraverse", "npm:1.5.1"],\
+          ["esutils", "npm:1.0.0"],\
+          ["source-map", "npm:0.1.43"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1638,6 +1724,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["esprima", [\
+      ["npm:1.0.4", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/esprima-npm-1.0.4-1cb110a602-10c0.zip/node_modules/esprima/",\
+        "packageDependencies": [\
+          ["esprima", "npm:1.0.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["esquery", [\
       ["npm:1.6.0", {\
         "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/esquery-npm-1.6.0-16fee31531-10c0.zip/node_modules/esquery/",\
@@ -1659,6 +1754,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["estraverse", [\
+      ["npm:1.5.1", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/estraverse-npm-1.5.1-1af960b3df-10c0.zip/node_modules/estraverse/",\
+        "packageDependencies": [\
+          ["estraverse", "npm:1.5.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:5.3.0", {\
         "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/estraverse-npm-5.3.0-03284f8f63-10c0.zip/node_modules/estraverse/",\
         "packageDependencies": [\
@@ -1668,10 +1770,26 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["esutils", [\
+      ["npm:1.0.0", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/esutils-npm-1.0.0-73c6af46f4-10c0.zip/node_modules/esutils/",\
+        "packageDependencies": [\
+          ["esutils", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:2.0.3", {\
         "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/esutils-npm-2.0.3-f865beafd5-10c0.zip/node_modules/esutils/",\
         "packageDependencies": [\
           ["esutils", "npm:2.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["eve", [\
+      ["npm:0.5.4", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/eve-npm-0.5.4-04741fd810-10c0.zip/node_modules/eve/",\
+        "packageDependencies": [\
+          ["eve", "npm:0.5.4"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1949,6 +2067,29 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["interweave", [\
+      ["npm:13.1.1", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/interweave-npm-13.1.1-594fd11de7-10c0.zip/node_modules/interweave/",\
+        "packageDependencies": [\
+          ["interweave", "npm:13.1.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:13.1.1", {\
+        "packageLocation": "./.yarn/__virtual__/interweave-virtual-65624d4f1e/6/Users/Esther/AppData/Local/Yarn/Berry/cache/interweave-npm-13.1.1-594fd11de7-10c0.zip/node_modules/interweave/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.2.7"],\
+          ["escape-html", "npm:1.0.3"],\
+          ["interweave", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:13.1.1"],\
+          ["react", "npm:19.2.3"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["ip-address", [\
       ["npm:10.1.0", {\
         "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/ip-address-npm-10.1.0-d5d5693401-10c0.zip/node_modules/ip-address/",\
@@ -1989,6 +2130,42 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/isexe-npm-3.1.1-9c0061eead-10c0.zip/node_modules/isexe/",\
         "packageDependencies": [\
           ["isexe", "npm:3.1.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["jodit", [\
+      ["npm:4.7.9", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/jodit-npm-4.7.9-46a7bb6ec3-10c0.zip/node_modules/jodit/",\
+        "packageDependencies": [\
+          ["jodit", "npm:4.7.9"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["jodit-react", [\
+      ["npm:5.2.38", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/jodit-react-npm-5.2.38-ebd7b2bee1-10c0.zip/node_modules/jodit-react/",\
+        "packageDependencies": [\
+          ["jodit-react", "npm:5.2.38"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:5.2.38", {\
+        "packageLocation": "./.yarn/__virtual__/jodit-react-virtual-2e7c6abb68/6/Users/Esther/AppData/Local/Yarn/Berry/cache/jodit-react-npm-5.2.38-ebd7b2bee1-10c0.zip/node_modules/jodit-react/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.2.7"],\
+          ["@types/react-dom", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:19.2.3"],\
+          ["jodit", "npm:4.7.9"],\
+          ["jodit-react", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:5.2.38"],\
+          ["react", "npm:19.2.3"],\
+          ["react-dom", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:19.2.3"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2515,6 +2692,37 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react-burger-menu", [\
+      ["npm:3.1.0", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/react-burger-menu-npm-3.1.0-86ab8d5edf-10c0.zip/node_modules/react-burger-menu/",\
+        "packageDependencies": [\
+          ["react-burger-menu", "npm:3.1.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:3.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-burger-menu-virtual-aab11db5c4/6/Users/Esther/AppData/Local/Yarn/Berry/cache/react-burger-menu-npm-3.1.0-86ab8d5edf-10c0.zip/node_modules/react-burger-menu/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.2.7"],\
+          ["@types/react-dom", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:19.2.3"],\
+          ["browserify-optional", "npm:1.0.1"],\
+          ["classnames", "npm:2.5.1"],\
+          ["eve", "npm:0.5.4"],\
+          ["prop-types", "npm:15.8.1"],\
+          ["react", "npm:19.2.3"],\
+          ["react-burger-menu", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:3.1.0"],\
+          ["react-dom", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:19.2.3"],\
+          ["snapsvg-cjs", "virtual:aab11db5c47e237fdafb98c387bf1fc1ef94abb3dd20f84a8dfa70410dc1f05c1c659e94ee63d8746869b8a7cd1571704585bc57d9e82a6b684158801bd2af53#npm:0.0.6"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["react-dom", [\
       ["npm:19.2.3", {\
         "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/react-dom-npm-19.2.3-93a2378518-10c0.zip/node_modules/react-dom/",\
@@ -2607,6 +2815,15 @@ const RAW_RUNTIME_STATE =
           "@types/react",\
           "react-dom",\
           "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["resolve", [\
+      ["patch:resolve@npm%3A1.1.7#optional!builtin<compat/resolve>::version=1.1.7&hash=3bafbf", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/resolve-patch-68fc483216-10c0.zip/node_modules/resolve/",\
+        "packageDependencies": [\
+          ["resolve", "patch:resolve@npm%3A1.1.7#optional!builtin<compat/resolve>::version=1.1.7&hash=3bafbf"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2733,6 +2950,39 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["snapsvg", [\
+      ["npm:0.5.1", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/snapsvg-npm-0.5.1-f264a55158-10c0.zip/node_modules/snapsvg/",\
+        "packageDependencies": [\
+          ["eve", "npm:0.5.4"],\
+          ["snapsvg", "npm:0.5.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["snapsvg-cjs", [\
+      ["npm:0.0.6", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/snapsvg-cjs-npm-0.0.6-bc5fde61c5-10c0.zip/node_modules/snapsvg-cjs/",\
+        "packageDependencies": [\
+          ["snapsvg-cjs", "npm:0.0.6"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:aab11db5c47e237fdafb98c387bf1fc1ef94abb3dd20f84a8dfa70410dc1f05c1c659e94ee63d8746869b8a7cd1571704585bc57d9e82a6b684158801bd2af53#npm:0.0.6", {\
+        "packageLocation": "./.yarn/__virtual__/snapsvg-cjs-virtual-aa7def9fa3/6/Users/Esther/AppData/Local/Yarn/Berry/cache/snapsvg-cjs-npm-0.0.6-bc5fde61c5-10c0.zip/node_modules/snapsvg-cjs/",\
+        "packageDependencies": [\
+          ["@types/eve", null],\
+          ["eve", "npm:0.5.4"],\
+          ["snapsvg", "npm:0.5.1"],\
+          ["snapsvg-cjs", "virtual:aab11db5c47e237fdafb98c387bf1fc1ef94abb3dd20f84a8dfa70410dc1f05c1c659e94ee63d8746869b8a7cd1571704585bc57d9e82a6b684158801bd2af53#npm:0.0.6"]\
+        ],\
+        "packagePeers": [\
+          "@types/eve",\
+          "eve"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["socks", [\
       ["npm:2.8.7", {\
         "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/socks-npm-2.8.7-d1d20aae19-10c0.zip/node_modules/socks/",\
@@ -2752,6 +3002,16 @@ const RAW_RUNTIME_STATE =
           ["debug", "virtual:2b51d83636a42cdc1434b9a574324a754fe902f0d8f47c84f37fc9dd9e42f0be9d5cd9599ca4ccf8c80b9be5756c7aea000403217e2fd7a585437af81d091cfd#npm:4.4.3"],\
           ["socks", "npm:2.8.7"],\
           ["socks-proxy-agent", "npm:8.0.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["source-map", [\
+      ["npm:0.1.43", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/source-map-npm-0.1.43-fb500e9a6d-10c0.zip/node_modules/source-map/",\
+        "packageDependencies": [\
+          ["amdefine", "npm:1.0.1"],\
+          ["source-map", "npm:0.1.43"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2804,6 +3064,15 @@ const RAW_RUNTIME_STATE =
           ["minizlib", "npm:3.1.0"],\
           ["tar", "npm:7.5.2"],\
           ["yallist", "npm:5.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["through", [\
+      ["npm:2.3.8", {\
+        "packageLocation": "../../../../../Users/Esther/AppData/Local/Yarn/Berry/cache/through-npm-2.3.8-df5f72a16e-10c0.zip/node_modules/through/",\
+        "packageDependencies": [\
+          ["through", "npm:2.3.8"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2962,10 +3231,13 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-hooks", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:7.0.1"],\
           ["eslint-plugin-react-refresh", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:0.4.26"],\
           ["globals", "npm:16.5.0"],\
+          ["interweave", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:13.1.1"],\
+          ["jodit-react", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:5.2.38"],\
           ["js-cookie", "npm:3.0.5"],\
           ["jwt-decode", "npm:4.0.0"],\
           ["prop-types", "npm:15.8.1"],\
           ["react", "npm:19.2.3"],\
+          ["react-burger-menu", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:3.1.0"],\
           ["react-dom", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:19.2.3"],\
           ["react-router-dom", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:7.11.0"],\
           ["vite", "virtual:c56b46d83dc705f61d645efafd50b5dd10b694a413a2075f2bfa433bbaa41df431f824c0f747468efbf1694d7d2f15adbae617c2c5c3f6b6e0b1978b92526b7c#npm:7.3.0"],\

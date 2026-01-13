@@ -45,16 +45,17 @@ export const RegisterPage = () => {
     // <h1>registro</h1>
     <>
         {/* <FormContainer title="Registro"/> */}
-        <form onSubmit={handleSubmit}>
-            <Input type="text" name="name" placeholder="Pon tu nombre" />
+        <form className="auth-form" onSubmit={handleSubmit}>
+
+            <Input type="text" name="name" placeholder="Nombre" />
             {error?.nombre_usuario && (
                 <p className="error">{error.nombre_usuario.msg}</p>
             )}
-            <Input type="text" name="email" placeholder="Pon tu correo" />
+            <Input type="text" name="email" placeholder="Email" />
             {error?.email && (
                 <p className="error">{error.email.msg}</p>
             )}
-            <Input type="text" name="password" placeholder="Escribe una contraseña" />
+            <Input type="text" name="password" placeholder="Contraseña" />
             {error?.contrasena && (
                 <p className="error">{error.contrasena.msg}</p>
             )}
@@ -65,7 +66,7 @@ export const RegisterPage = () => {
             }
             <Button text="Registrarse" type="submit" />
         </form>
-        <p style={{ textAlign: "center", marginTop: "10px" }}>
+        <p>
             ¿Ya tienes cuenta? <NavLink to="/login">Inicia Session</NavLink>
         </p>
     </>

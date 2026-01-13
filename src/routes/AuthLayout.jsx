@@ -6,9 +6,9 @@ export const AuthLayout = () => {
   return (
     <>
       {/* <Header/> */}
-      <main>
+      {/* <main> */}
         <Outlet/>
-      </main>
+      {/* </main> */}
       
     </>
     

@@ -1,10 +1,10 @@
-import './css/Footer.css'
+// import './css/Footer.css'
 
 export const Footer = () => {
   return (
-    <div className='footer'>
+    <footer className='footer'>
       <p>Creado por Esther</p>
-    </div>
+    </footer>
   )
 }
 

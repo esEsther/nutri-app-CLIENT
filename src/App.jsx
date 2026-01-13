@@ -1,20 +1,14 @@
-import { Footer } from "./Components/Footer"
-import { Header } from "./Components/Header"
-import { AppRoutes } from "./routes/AppRoutes"
-
+import { AppRoutes } from "./routes/AppRoutes";
+import { Layout } from "./routes/Layout";
 
 function App() {
-  
-
   return (
-  <>
-      <Header/>
-     <AppRoutes/>
-     <Footer/>
-
-  </>
- )
-  
+    <Layout>
+      <AppRoutes />
+    </Layout>
+  );
 }
+
+
 
 export default App

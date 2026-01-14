@@ -1,10 +1,14 @@
 
-  import { useContext, useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+  import {useEffect, useState } from 'react';
+import { useNavigate} from 'react-router-dom';
 import conectar from '../helpers/fetch';
-import { Card } from './Card';
-// import './css/MostrarArticulos.css';
 
+/**
+ * Componente que renderiza la sección de noticias o artículos destacados en la Home.
+ * * Realiza una petición al endpoint público de inicio y muestra una selección
+ * limitada de las publicaciones más recientes para fomentar la lectura.
+ * * @component
+ */
 export const ArtculosHome = () => {
 
   const [articulos, setArticulos] = useState([]);

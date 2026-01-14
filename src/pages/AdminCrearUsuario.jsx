@@ -3,9 +3,23 @@ import { useParams, useNavigate } from "react-router-dom";
 import conectar from "../helpers/fetch";
 import { adminActions } from "../hooks/adminActions";
 import { UserContext } from "../contexts/UserContext";
-import { Input } from "../Components/Input";
 import { Errores } from "../Components/Errores";
 
+/**
+ * @typedef {Object} NuevoUsuario
+ * @property {string} nombre - Nombre completo del usuario.
+ * @property {string} email - Dirección de correo electrónico.
+ * @property {string} id_rol - El ID del rol seleccionado (como string para el select).
+ * @property {string} contrasenia - Contraseña para la nueva cuenta.
+ */
+
+/**
+ * Componente administrativo para la creación de nuevos usuarios.
+ * * Gestiona un formulario controlado para capturar los datos de un nuevo perfil,
+ * transforma los tipos de datos necesarios (como el rol a número) y redirige
+ * al listado general tras una creación exitosa.
+ * * @component
+ */
 export const AdminCrearUsuario = () => {
   const { id } = useParams(); // id_usuario
   const navigate = useNavigate();
@@ -21,6 +35,10 @@ export const AdminCrearUsuario = () => {
   const { crearUsuario} = adminActions();
   const {urlBase}=useContext(UserContext)
 
+  /**
+   * Actualiza el estado del usuario conforme se escribe en los inputs.
+   * @param {Object} e - Evento de cambio del input.
+   */
   const handleChange = (e) => {
     setUsuario({
       ...usuario,
@@ -28,6 +46,12 @@ export const AdminCrearUsuario = () => {
     });
   };
 
+  /**
+   * Procesa el envío del formulario.
+   * * Realiza la conversión de tipos (id_rol a Number) antes de enviar.
+   * @async
+   * @param {Object} e - Evento de envío del formulario.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);

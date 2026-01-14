@@ -3,7 +3,16 @@ import { useParams, useNavigate } from "react-router-dom";
 import conectar from "../helpers/fetch";
 import { adminActions } from "../hooks/adminActions";
 
+
+/**
+ * Componente de administración para editar los datos de un usuario.
+ * * Permite al administrador modificar el nombre, email y el rol (Usuario/Admin) 
+ * de un usuario específico identificado por su ID en la URL.
+ * * @component
+ */
 export const AdminEditarUsuario = () => {
+  /** * ID del usuario obtenido de los parámetros de la URL.
+   * @type {string} */
   const { id } = useParams(); // id_usuario
   const navigate = useNavigate();
 
@@ -19,6 +28,10 @@ export const AdminEditarUsuario = () => {
   const urlBase = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
+    /**
+     * Obtiene el perfil del usuario desde el servidor.
+     * @async
+     */
     const fetchUsuario = async () => {
       try {
         const resp = await conectar(
@@ -46,6 +59,10 @@ export const AdminEditarUsuario = () => {
     fetchUsuario();
   }, [id, token, urlBase]);
 
+  /**
+   * Maneja los cambios en los inputs del formulario de forma dinámica.
+   * @param {React.ChangeEvent<HTMLInputElement|HTMLSelectElement>} e - Evento de cambio.
+   */
   const handleChange = (e) => {
     setUsuario({
       ...usuario,
@@ -53,6 +70,12 @@ export const AdminEditarUsuario = () => {
     });
   };
 
+  /**
+   * Procesa el envío del formulario para actualizar el usuario.
+   * * Convierte el ID de rol a número antes de enviarlo a la API.
+   * @async
+   * @param {React.FormEvent<HTMLFormElement>} e - Evento de envío del formulario.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);

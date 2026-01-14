@@ -6,6 +6,22 @@ import {userAuth} from '../hooks/userAuth'
 import {adminActions} from '../hooks/adminActions'
 import { UserContext } from '../contexts/UserContext';
 
+/**
+ * @typedef {Object} Usuario
+ * @property {number|string} id_usuario - Identificador único del usuario.
+ * @property {string} nombre - Nombre completo o username.
+ * @property {string} email - Correo electrónico del usuario.
+ * @property {number} id_rol - Identificador del rol (ej: 1 para user, 2 para admin).
+ */
+
+/**
+ * Componente administrativo para visualizar y gestionar la lista de usuarios.
+ * * Este componente permite al administrador:
+ * 1. Listar todos los usuarios registrados mediante una petición autenticada.
+ * 2. Navegar al formulario de edición de cada usuario.
+ * 3. Eliminar usuarios, actualizando el estado local de forma reactiva.
+ * * @component
+ */
 export const MostrarUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
   const[error, setError] = useState(null)

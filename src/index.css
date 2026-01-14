@@ -41,7 +41,7 @@ a:hover {
 body {
   /* margin: 0; */
   /* display: flex;*/
-  place-items: center; 
+  /* place-items: center;  */
   min-width: 320px;
   min-height: 100vh;
 }
@@ -111,9 +111,10 @@ p {
   flex-direction: row;
   /* flex-wrap: wrap; */
   align-items: center;
-  padding: 20px;
-  gap: 60px;
-  margin: 5%;
+  /* padding: 20px; */
+  gap: 30px;
+  margin: 0%;
+   margin-bottom: 20px;
 }
 @media (max-width: 768px) {
   .home-container {
@@ -140,75 +141,15 @@ p {
 }
 
 
-header {
-  width: 100%;
-  min-height: 50px;
-  background-color: #000000; 
-  color: #0e5c6f; 
-  padding: 0px 30px;
-  top: 0;
-  display: flex;
-  justify-content: space-between; /* izquierda y derecha */
-  align-items: center;  
-  z-index: 1000;
-  position: sticky;
-}
-
-header p {
-    font-family: serif;
-    color: #84527b;
-    justify-content: start;
-    font-size: 1.5rem;
-}
-
-
-header nav {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 25px; /* Espacio entre links */
-  flex-wrap: wrap;
-}
-
-header nav a {
-  color: #73c2d6;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-header nav a:hover{
-  background-color: #544254;
-
-}
-
-header nav a.active {
-  background-color: #c50ea3;
-
-}
-
-
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    position:relative;
-  }
-
-  header nav {
-    width: 100%;
-    justify-content: flex-end;
-    /* position: sticky; */
-
-  }
-}
+/*  */
 
 
 .articulos-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 40px;
+  margin:  40px;
   border-radius: 25px;
 }
 
@@ -272,7 +213,7 @@ select {
     display: flex;
     justify-content: center; /* centra horizontalmente */
     align-items: center;     /* centra verticalmente */
-    height: 35px;  
+    height: 75px;  
     width: 100%;
     bottom: 0;
 }
@@ -399,4 +340,74 @@ form {
 #editor {
   max-width: 700px;
 }
+
+html, body {
+  height: 100%;
+    width: 100%;
+  max-width: 100%;
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* BANNER */
+.banner {
+  width: 100%;
+  height: 40vh;
+  min-height: 320px;
+  background-image: url("http://localhost:7001/upload/5b74d460-abf6-424d-9410-c0fe31535eb0.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   margin-bottom: 30px;
+}
+
+/* CAPA OSCURA */
+.banner-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* TEXTO */
+.banner-overlay h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.banner-overlay p {
+  color: #e5e7eb;
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .banner {
+    height: 25vh;
+  }
+
+  .banner-overlay h1 {
+    font-size: 2.2rem;
+  }
+
+  .banner-overlay p {
+    font-size: 1rem;
+  }
+}
+
+
 

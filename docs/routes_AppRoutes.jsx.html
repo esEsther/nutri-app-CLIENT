@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: routes/AppRoutes.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: routes/AppRoutes.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Routes, Route} from 'react-router-dom'
+import { HomePage } from '../pages/HomePage'
+import { ArticuloDetalle } from '../Components/ArticuloDetalle'
+import { Proteccion } from '../Components/PublicProtection'
+import { AuthLayout } from './AuthLayout'
+import { RegisterPage } from '../pages/RegisterPage'
+import { BuscarArticulo } from '../pages/UserBuscar'
+import { Favoritos } from '../pages/UserFavoritos'
+import { AdminCrear } from '../pages/AdminCrear'
+import { AdminEditar } from '../pages/AdminEditar'
+import { LoginPage } from '../pages/LoginPage'
+import { AdminBuscar } from '../pages/AdminBuscar'
+import { AdminEditarUsuario } from '../pages/AdminEditarUsuario'
+import { UserBuscarRecetas } from '../pages/UserBuscarRecetas'
+import { AdminCrearUsuario } from '../pages/AdminCrearUsuario'
+import { RecetaDetalle } from '../pages/RecetaDetalle'
+import { RecetasFavoritas } from '../pages/RecetasFavoritas'
+
+
+/**
+ * Gestor de rutas principal de la aplicación.
+ * * Este componente centraliza la definición de todas las URLs. Se divide en tres bloques principales:
+ * 1. **Rutas Públicas**: Accesibles por cualquier usuario (Home, Detalles, Login).
+ * 2. **Rutas de Usuario**: Protegidas y anidadas bajo el prefijo `/user`.
+ * 3. **Rutas de Administrador**: Protegidas y anidadas bajo el prefijo `/admin`.
+ * * @component
+ * @see {@link Proteccion} Para la lógica de validación de sesión.
+ * @see {@link AuthLayout} Como contenedor de las rutas anidadas.
+ * @returns {JSX.Element} El sistema de ruteo configurado con React Router.
+ */
+export const AppRoutes = () => {
+    return (
+        &lt;Routes>
+      &lt;Route path='/' element={&lt;HomePage />} />
+      &lt;Route path="/articulo/:id" element={&lt;ArticuloDetalle />} />
+      &lt;Route path="/login" element={&lt;LoginPage />}/>
+      &lt;Route path="/register" element={&lt;RegisterPage />}/>
+      &lt;Route path="/detalleReceta/:id" element={&lt;RecetaDetalle/>}/>
+      
+
+      &lt;Route path="/user" element={&lt;Proteccion>
+                                      &lt;AuthLayout />
+                                    &lt;/Proteccion>
+                                  }>
+        &lt;Route path="buscarArticulo" element={&lt;BuscarArticulo/>}/>
+        &lt;Route path="favoritos"  element={ &lt;Favoritos/>  } />
+        &lt;Route path="buscarRecetas" element={ &lt;UserBuscarRecetas/> }/>
+        &lt;Route path="recetasFavoritas" element={ &lt;RecetasFavoritas/> }/>
+        
+      &lt;/Route> 
+
+      &lt;Route path="/admin" element={&lt;Proteccion>
+                                      &lt;AuthLayout />
+                                    &lt;/Proteccion>
+                                  }>
+        &lt;Route path="todosLosArticulos" element={&lt;BuscarArticulo/>}/>
+        &lt;Route path="anadirArticulo"  element={ &lt;AdminCrear/>  } />
+        &lt;Route path="editarArticulo/:id"  element={ &lt;AdminEditar/>  } />
+        &lt;Route path="todosLosUsuarios" element={&lt;AdminBuscar/>} />
+        &lt;Route path="editarUsuario/:id" element={&lt;AdminEditarUsuario/>} />
+        &lt;Route path="crearUsuario" element={&lt;AdminCrearUsuario/>} />
+¡
+      &lt;/Route> 
+
+
+    &lt;/Routes>
+        
+     
+
+    )
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AdminBuscar">AdminBuscar</a></li><li><a href="global.html#AdminCrear">AdminCrear</a></li><li><a href="global.html#AdminCrearUsuario">AdminCrearUsuario</a></li><li><a href="global.html#AdminEditar">AdminEditar</a></li><li><a href="global.html#AdminEditarUsuario">AdminEditarUsuario</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppRoutes">AppRoutes</a></li><li><a href="global.html#ArtculosHome">ArtculosHome</a></li><li><a href="global.html#ArticuloDetalle">ArticuloDetalle</a></li><li><a href="global.html#AuthLayout">AuthLayout</a></li><li><a href="global.html#BuscarArticulo">BuscarArticulo</a></li><li><a href="global.html#Card">Card</a></li><li><a href="global.html#Errores">Errores</a></li><li><a href="global.html#Favoritos">Favoritos</a></li><li><a href="global.html#GaleriaArticulos">GaleriaArticulos</a></li><li><a href="global.html#GaleriaUsuarios">GaleriaUsuarios</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#HomePage">HomePage</a></li><li><a href="global.html#Layout">Layout</a></li><li><a href="global.html#LoginPage">LoginPage</a></li><li><a href="global.html#MostrarArticulos">MostrarArticulos</a></li><li><a href="global.html#MostrarUsuarios">MostrarUsuarios</a></li><li><a href="global.html#Proteccion">Proteccion</a></li><li><a href="global.html#RecetaDetalle">RecetaDetalle</a></li><li><a href="global.html#RecetasFavoritas">RecetasFavoritas</a></li><li><a href="global.html#RecetasHome">RecetasHome</a></li><li><a href="global.html#RegisterPage">RegisterPage</a></li><li><a href="global.html#TarjetaArticulo">TarjetaArticulo</a></li><li><a href="global.html#UserAction">UserAction</a></li><li><a href="global.html#UserBuscarRecetas">UserBuscarRecetas</a></li><li><a href="global.html#UserProvider">UserProvider</a></li><li><a href="global.html#adminActions">adminActions</a></li><li><a href="global.html#conectar">conectar</a></li><li><a href="global.html#handleSubmit">handleSubmit</a></li><li><a href="global.html#userAuth">userAuth</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Tue Jan 13 2026 22:38:57 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

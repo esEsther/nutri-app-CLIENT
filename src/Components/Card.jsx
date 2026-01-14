@@ -1,10 +1,25 @@
 
 import { UserAction } from "../hooks/userAction";
-// import './css/Card.css'; 
 import {useNavigate} from 'react-router-dom'
-
 import { userAuth } from "../hooks/userAuth";
 
+/**
+ * @typedef {Object} Receta
+ * @property {number|string} id_receta - ID de la receta en la BD local.
+ * @property {number|string} id - ID de la receta proveniente de API externa (Spoonacular, etc).
+ * @property {string} titulo - Nombre de la receta.
+ * @property {string} imagen_url - URL de la imagen.
+ */
+
+/**
+ * Componente de tarjeta para visualización individual de recetas.
+ * * Este componente gestiona la navegación al detalle de la receta y la lógica 
+ * para añadir recetas externas a la base de datos local al interactuar con ellas.
+ * * @component
+ * @param {Object} props - Propiedades del componente.
+ * @param {Receta} props.recipe - Objeto con la información de la receta.
+ * @param {Function} [props.onSelect] - Callback opcional para manejar la selección.
+ */
 export const Card = ({ recipe,  onSelect }) => {
 
   const { guardarEnFavoritos, guardarRecetaEnBd } = UserAction();

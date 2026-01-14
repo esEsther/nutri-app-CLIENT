@@ -8,7 +8,21 @@ import { Botones } from '../Components/Botones';
 import conectar from '../helpers/fetch';
 import { UserContext } from '../contexts/UserContext';
 
+/**
+ * @typedef {Object} RecetaDetalleData
+ * @property {string|number} id_receta - Identificador único de la receta.
+ * @property {string} titulo - El nombre o título de la receta.
+ * @property {string} imagen_url - URL de la imagen de cabecera.
+ * @property {string} contenido - Cuerpo de la receta en formato HTML/Texto.
+ */
 
+/**
+ * Componente de vista detallada de una receta.
+ * * Extrae el ID de la URL, realiza una petición al backend para obtener los datos
+ * y renderiza el contenido procesando etiquetas HTML mediante el componente Markup.
+ * * @component
+ * @returns {JSX.Element} La vista con la información completa de la receta y acciones disponibles.
+ */
 export const RecetaDetalle = () => {
   const { id } = useParams();
   const {urlBase} = useContext(UserContext)
@@ -22,30 +36,24 @@ export const RecetaDetalle = () => {
   const {getRol} = userAuth()
   const {spooncular, guardarRecetaEnBd} =UserAction()
 
+  /** * Rol del usuario obtenido desde el token para control de permisos en botones.
+   * @type {number|null} */
   const rol = getRol()
   console.log({id})
 
+  /**
+   * Efecto que se dispara al cambiar el ID en la URL para obtener los datos de la receta.
+   */
   useEffect(() => {
+    /**
+     * Realiza la llamada asíncrona al endpoint de recetas.
+     * @async
+     */
     const fetchReceta = async () => {
       try {
         let data = await conectar(`${urlBase}/inicio/receta/${id}`)
         if(data.data) setReceta(data.data[0])
-
-        // if(!data.data) {
-        //     // const resp = await spooncular(`/${id}/information`);
-        // // const titulo = await traducir(receta.title, "EN", "ES")
-        // // const contenido = await traducir(receta.instructions, "EN", "ES")
-        // // setReceta({ 
-        // //             id_receta: id,
-        // //             titulo: resp.title,
-        // //             imagen_url: resp.image,
-        // //             contenido
-        // //         })
-        // await  guardarRecetaEnBd(id)
-        // const data2 = await conectar(`${urlBase}/inicio/receta/${id}`)
-        // if(data2.data) setReceta(data2.data[0])
-        // }
-                    
+ 
       } catch (error) {
         console.error(error);
       }
@@ -65,6 +73,7 @@ export const RecetaDetalle = () => {
         className="detalle-img"
       />
       <div className="detalle-content">
+        {/* Markup procesa de forma segura el string HTML proveniente del backend */}
           <Markup content={receta.contenido} />
       </div>
 

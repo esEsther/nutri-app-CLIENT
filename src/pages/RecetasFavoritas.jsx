@@ -5,6 +5,20 @@ import conectar from '../helpers/fetch';
 import { UserAction } from '../hooks/userAction';
 import { UserContext } from '../contexts/UserContext';
 
+/**
+ * @typedef {Object} RecetaFavorita
+ * @property {number|string} id_receta - Identificador único de la receta.
+ * @property {string} titulo - Nombre de la receta.
+ * @property {string} imagen_url - Enlace a la imagen de la receta.
+ */
+
+/**
+ * Componente que muestra la galería de recetas guardadas como favoritas por el usuario.
+ * * Permite visualizar el listado, navegar al detalle de cada receta y
+ * eliminarlas de la lista de favoritos.
+ * * @component
+ * @returns {JSX.Element} Vista de recetas favoritas.
+ */
 export const RecetasFavoritas = () => {
 
     const {urlBase} = useContext(UserContext)
@@ -16,6 +30,10 @@ export const RecetasFavoritas = () => {
     const id_articulo = null
     
     useEffect(() => {
+      /**
+         * Obtiene las recetas favoritas desde el endpoint del usuario.
+         * @async
+         */
         const fetchFavoritos = async () => {
         
             try {
@@ -34,10 +52,20 @@ export const RecetasFavoritas = () => {
         fetchFavoritos();
     }, []);
 
+    /**
+     * Redirige a la página de detalle de la receta seleccionada.
+     * @param {number|string} id - ID de la receta.
+     */
     const irDetalle = (id) => {
     navigate(`/detalleReceta/${id}`);
   };
 
+  /**
+     * Elimina una receta de la lista de favoritos tanto en el backend como en el estado local.
+     * * @async
+     * @param {number|string} id_articulo - ID del artículo (en este contexto suele ser null).
+     * @param {number|string} id_receta - ID de la receta a eliminar.
+     */
   const handleFavorito = async(id_articulo, id_receta) => {
     try {
         const resp = await eliminarDeFavoritos(id_articulo, id_receta)

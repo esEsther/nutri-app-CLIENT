@@ -1,22 +1,24 @@
 import {useState, useEffect, useContext} from 'react'
 import conectar from '../helpers/fetch'
-import {useNavigate, useLocation} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {userAuth }from '../hooks/userAuth'
-// import './Css/MostrarArticulos.css'
 import { Botones } from './Botones'
 import { UserContext } from '../contexts/UserContext'
 
+/**
+ * Componente que renderiza una galería de artículos filtrada por título.
+ * * Realiza peticiones asíncronas al backend cada vez que el término de búsqueda cambia,
+ * gestionando la visualización de resultados y las acciones asociadas a cada artículo.
+ * * @component
+ * @param {Object} props - Propiedades del componente.
+ * @param {string} props.titulo - Término de búsqueda (título del artículo) para filtrar los resultados.
+ */
 export const GaleriaArticulos = ({titulo}) => {
 const [articulos, setArticulos] = useState([]);
   const navigate = useNavigate();
-  const location = useLocation() //hook para saber la ruta actual.
-  // const isUserRoute = location.pathname.startsWith('/user') //true si estamos en /user
-//   const isAdminRoute = location.pathname.startsWith('/admin') //true si estamos en admin
-//  const urlBase = "http://localhost:7001"
  const {token, getRol} = userAuth()
 const {urlBase } = useContext(UserContext)
- 
-  //  const {eliminarArticulo} = adminActions()
+
    const idReceta = null
    const rol =getRol()
 
@@ -48,35 +50,6 @@ const {urlBase } = useContext(UserContext)
   const handleEliminarArticulo = (id) => {
   setArticulos(prev => prev.filter(art => art.id_articulo !== id));
 };
-
-
-
-  //  const handleFavorito = async (articuloId) => {
-  //   try {
-  //     await guardarEnFavoritos(articuloId);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
-  //     const handleEditarArticulo = (id) => {
-  //   navigate(`/admin/editarArticulo/${id}`);
-  // };
-  
-  // const handleEliminarArticulo= async(id) => {
-  //   try {
-  //     const resp = await eliminarArticulo(id)
-  //     if (resp?.ok !== false) {
-  //         setArticulos(prev =>
-  //           prev.filter(art => art.id_articulo !== id)
-  //         );
-  //       }
-  //   } catch (error) {
-  //       console.log(error)
-  //       return error
-  //   }
-    
-  // }
   
   return (
     <div className="articulos-container">

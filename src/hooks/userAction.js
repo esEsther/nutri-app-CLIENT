@@ -4,6 +4,16 @@ import { useContext, useState } from "react"
 
 const urlbase = import.meta.env.VITE_BACKEND_URL
 
+/**
+ * Hook personalizado para gestionar acciones de usuario relacionadas con contenidos externos y favoritos.
+ * * Este hook centraliza la lógica de:
+ * 1. Traducción de textos mediante DeepL (vía backend).
+ * 2. Búsqueda de recetas en la API externa de Spoonacular.
+ * 3. Gestión de favoritos (añadir/eliminar).
+ * 4. Persistencia de recetas externas en la base de datos local.
+ * * @kind function
+ * @returns {Object} Métodos y estados para la gestión de contenido.
+ */
 export const UserAction = () => {
 
   const [translation, setTranslation] = useState("");
@@ -44,6 +54,12 @@ export const UserAction = () => {
     }
 }
 
+/**
+     * Realiza una consulta directa a la API de Spoonacular.
+     * @async
+     * @param {string} query - Endpoint y parámetros de búsqueda (ej. /search?query=pasta).
+     * @returns {Promise<Object>} Datos devueltos por la API de Spoonacular.
+     */
 const spooncular = async (query) => {
     try {
         
@@ -54,6 +70,13 @@ const spooncular = async (query) => {
     }
 }
 
+/**
+     * Guarda un artículo o receta en la lista de favoritos del usuario.
+     * @async
+     * @param {number|string|null} idAticulo - ID del artículo (si aplica).
+     * @param {number|string|null} idReceta - ID de la receta (si aplica).
+     * @returns {Promise<Object>} Respuesta del servidor.
+     */
    const guardarEnFavoritos = async(idAticulo, idReceta)=> {
         try {
             const resp = await conectar(
@@ -72,6 +95,13 @@ const spooncular = async (query) => {
         }
      };
 
+     /**
+     * Elimina un elemento de favoritos detectando automáticamente si es artículo o receta.
+     * @async
+     * @param {number|string|null} id_articulo - ID del artículo.
+     * @param {number|string|null} id_receta - ID de la receta.
+     * @returns {Promise<Object>} Respuesta del servidor tras la eliminación.
+     */
     const eliminarDeFavoritos = async(id_articulo, id_receta) => {
         const id = id_articulo ? id_articulo : id_receta 
         const tipo = id_articulo ? 'articulo' : 'receta'
@@ -91,7 +121,13 @@ const spooncular = async (query) => {
         }
 
     }
-
+    
+    /**
+     * Obtiene una receta externa, la traduce al español y la guarda en la base de datos local.
+     * * Este método combina la API de Spoonacular, el servicio de traducción y el backend propio.
+     * @async
+     * @param {number|string} id - ID de la receta en Spoonacular.
+     */
     const guardarRecetaEnBd = async(id) => {
         if(!id) return
         try{

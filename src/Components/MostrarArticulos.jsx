@@ -1,21 +1,31 @@
-import { useContext, useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import {  useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import conectar from '../helpers/fetch';
 import './css/MostrarArticulos.css';
 import {userAuth} from '../hooks/userAuth'
 import {adminActions} from '../hooks/adminActions'
-import { UserAction } from '../hooks/userAction';
 import { Botones } from './Botones';
-import { UserContext } from '../contexts/UserContext';
 
+/**
+ * @typedef {Object} Articulo
+ * @property {number|string} id_articulo - Identificador único del artículo.
+ * @property {string} titulo - Título del artículo.
+ * @property {string} imagen_url - URL de la imagen de portada.
+ */
+
+/**
+ * Componente principal para listar artículos en formato de galería.
+ * * Este componente se encarga de:
+ * 1. Obtener todos los artículos desde el endpoint de inicio.
+ * 2. Gestionar la navegación al detalle del artículo.
+ * 3. Proveer una función de actualización local tras la eliminación de un ítem.
+ * 4. Adaptar las acciones disponibles delegando en el componente {@link Botones}.
+ * * @component
+ */
 export const MostrarArticulos = () => {
   const [articulos, setArticulos] = useState([]);
   const[error, setError] = useState(null)
   const navigate = useNavigate();
-  const location = useLocation() //hook para saber la ruta actual.
-  const isUserRoute = location.pathname.startsWith('/user') //true si estamos en /user
-  const isAdminRoute = location.pathname.startsWith('/admin') //true si estamos en admin
-  const {guardarEnFavoritos, guardarRecetaEnBd,} = UserAction()
   const {getRol}=userAuth()
   const {eliminarArticulo} = adminActions()
   const idReceta = null
@@ -34,16 +44,6 @@ export const MostrarArticulos = () => {
     fetchArticulos();
   }, []);
 
-  //  const handleFavorito = async (articuloId, idReceta) => {
-  //   try {
-  //     await guardarEnFavoritos(articuloId, idReceta);
-  //     if(idReceta) {
-  //       await guardarRecetaEnBd(idReceta)
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   const irDetalle = (id) => {
     navigate(`/articulo/${id}`);

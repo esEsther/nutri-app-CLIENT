@@ -2,13 +2,16 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { adminActions } from '../hooks/adminActions';
-import JoditEditor from 'jodit-react';
-
 import { EditorDetexto } from '../Components/EditorDeTexto';
-import { Input } from '../Components/Input';
 import { Errores } from '../Components/Errores';
 
-
+/**
+ * Componente administrativo para la creación de nuevos artículos.
+ * * Gestiona un formulario multimedia que incluye carga de archivos (imágenes)
+ * y un editor de texto enriquecido (WYSIWYG). Controla el estado de carga (loading)
+ * y la validación de campos obligatorios antes de enviar los datos al servidor.
+ * * @component
+ */
 export const AdminCrear = () => {
     const navigate = useNavigate();
     const { crearArticulo } = adminActions();
@@ -22,7 +25,16 @@ export const AdminCrear = () => {
 
     const editor = useRef(null); // referencia al editor
 
-
+    /**
+     * Procesa el envío del formulario.
+     * * 1. Valida la presencia de todos los campos obligatorios.
+     * 2. Activa el estado de carga para feedback visual.
+     * 3. Envía los datos (incluyendo el archivo binario) a través de adminActions.
+     * 4. Redirige a la galería de artículos del administrador si tiene éxito.
+     * * @async
+     * @param {Object} e - Evento de envío del formulario.
+     * @returns {Promise<void>}
+     */
     const handleSubmit = async (e) => {
         e.preventDefault();
 

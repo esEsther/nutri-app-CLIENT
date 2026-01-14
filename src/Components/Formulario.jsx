@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-// import './Css/Formulario.css'
+
 
 import handleSubmit from '../Hooks/form';
 
@@ -13,7 +12,4 @@ export const Formulario = ({ buscador }) => {
         </form>
       
   )
-}
-Formulario.propTypes = {
-  buscador: PropTypes.func
 }

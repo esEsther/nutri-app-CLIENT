@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: hooks/userAuth.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: hooks/userAuth.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useContext, useState } from "react"
+import { UserContext } from "../contexts/UserContext"
+import conectar from "../helpers/fetch"
+import {jwtDecode} from "jwt-decode"
+
+/**
+ * Hook personalizado para gestionar la lógica de autenticación.
+ * * Este hook actúa como intermediario entre los componentes y el {@link UserContext}.
+ * Centraliza las llamadas a la API para login, registro y la gestión del token JWT.
+ * * @kind function
+ * @returns {Object} Un objeto con métodos y estados de autenticación.
+ * @property {Function} loginUser - Función para iniciar sesión.
+ * @property {Function} registerUser - Función para registrar un nuevo usuario.
+ * @property {Function} logoutUser - Función para cerrar la sesión.
+ * @property {Function} getRol - Obtiene el rol decodificado del token actual.
+ * @property {Object|null} user - Datos del usuario autenticado.
+ * @property {string|null} token - Token JWT de la sesión activa.
+ * @property {Object|string|null} error - Estado de errores de las peticiones.
+ */
+export const userAuth = () => {
+
+    const {login, register, logout, user, token, urlBase} = useContext(UserContext)
+    const [error, setError] =useState(null)
+    
+    /**
+     * Realiza la petición de inicio de sesión.
+     * * @async
+     * @param {Object} datos - Credenciales del usuario (email y contrasenia).
+     * @returns {Promise&lt;Object>} Resultado de la operación con el usuario, token y estado 'ok'.
+     */
+    const loginUser = async(datos) => {
+        console.log(datos)
+        const usuario = await conectar(`${urlBase}/login`, 'POST', datos)
+        console.log(usuario)
+        const {usuario: user, token, ok} = usuario
+
+        if (ok) {
+            login(user, token)
+            return { usuario: user, token, ok : true };
+        } else {
+            const errors = usuario.errors || usuario
+            setError(errors)
+            return { ok: false, errors };
+        }
+
+    }
+
+    /**
+     * Registra un nuevo usuario en el sistema.
+     * * @async
+     * @param {Object} datos - Datos del nuevo usuario (nombre, email, password).
+     * @returns {Promise&lt;Object|void>} El token generado si el registro es exitoso.
+     */
+    const registerUser = async(datos) => {
+        // console.log(datos, 'datos desde registerUser en el hook user Auth')
+        const usuario = await conectar(`${urlBase}/signup`, 'POST', datos)
+        console.log(usuario, 'usuario desde register hook')
+        const {user, token, ok} = usuario
+
+        if (ok) {
+            register(user,token)
+            return {token}
+        } else {
+            const errors = usuario.msg || 'Parece que este usuario ya ha sido registrado'
+            setError(errors)
+        }
+        }
+    
+
+    /**
+     * Finaliza la sesión del usuario eliminando los datos del Context y Storage.
+     */
+    const logoutUser = () =>{
+        logout();
+    }
+
+    /**
+     * Decodifica el token almacenado para extraer el rol del usuario.
+     * * Utiliza la librería `jwt-decode`. Si no hay token o es inválido, retorna null.
+     * * @returns {number|null} El ID del rol (ej. 1 para Usuario, 2 para Admin) o null.
+     */
+    const getRol = () =>{
+         if (!token) return null;
+        try {
+            const decoded = jwtDecode(token);
+            return decoded?.rol || null;
+        } catch (error) {
+            console.error('Error decodificando token:', error);
+            return null;
+        }
+    }
+
+ 
+ 
+
+
+
+  return {
+    loginUser,
+    registerUser,
+    logoutUser,
+    user,
+    error,
+    getRol,
+    token
+    }
+}
+
+
+   </code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AdminBuscar">AdminBuscar</a></li><li><a href="global.html#AdminCrear">AdminCrear</a></li><li><a href="global.html#AdminCrearUsuario">AdminCrearUsuario</a></li><li><a href="global.html#AdminEditar">AdminEditar</a></li><li><a href="global.html#AdminEditarUsuario">AdminEditarUsuario</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppRoutes">AppRoutes</a></li><li><a href="global.html#ArtculosHome">ArtculosHome</a></li><li><a href="global.html#ArticuloDetalle">ArticuloDetalle</a></li><li><a href="global.html#AuthLayout">AuthLayout</a></li><li><a href="global.html#BuscarArticulo">BuscarArticulo</a></li><li><a href="global.html#Card">Card</a></li><li><a href="global.html#Errores">Errores</a></li><li><a href="global.html#Favoritos">Favoritos</a></li><li><a href="global.html#GaleriaArticulos">GaleriaArticulos</a></li><li><a href="global.html#GaleriaUsuarios">GaleriaUsuarios</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#HomePage">HomePage</a></li><li><a href="global.html#Layout">Layout</a></li><li><a href="global.html#LoginPage">LoginPage</a></li><li><a href="global.html#MostrarArticulos">MostrarArticulos</a></li><li><a href="global.html#MostrarUsuarios">MostrarUsuarios</a></li><li><a href="global.html#Proteccion">Proteccion</a></li><li><a href="global.html#RecetaDetalle">RecetaDetalle</a></li><li><a href="global.html#RecetasFavoritas">RecetasFavoritas</a></li><li><a href="global.html#RecetasHome">RecetasHome</a></li><li><a href="global.html#RegisterPage">RegisterPage</a></li><li><a href="global.html#TarjetaArticulo">TarjetaArticulo</a></li><li><a href="global.html#UserAction">UserAction</a></li><li><a href="global.html#UserBuscarRecetas">UserBuscarRecetas</a></li><li><a href="global.html#UserProvider">UserProvider</a></li><li><a href="global.html#adminActions">adminActions</a></li><li><a href="global.html#conectar">conectar</a></li><li><a href="global.html#handleSubmit">handleSubmit</a></li><li><a href="global.html#userAuth">userAuth</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Tue Jan 13 2026 22:38:57 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,68 +1,79 @@
-
-header {
+.header {
   width: 100%;
-  min-height: 50px;
-  background-color: #000000; 
-  color: #0e5c6f; 
-  padding: 0px 30px;
-  top: 0;
+  height: 100px;
+  background-color: #000000;
+  color: #ffffff;
   display: flex;
-  justify-content: space-between; /* izquierda y derecha */
-  align-items: center;  
-  z-index: 1000;
-  position: sticky;
-}
-
-header p {
-    font-family: serif;
-    color: #84527b;
-    justify-content: start;
-    font-size: 1.5rem;
-}
-
-
-header nav {
-  display: flex;
-  justify-content: end;
   align-items: center;
-  gap: 25px; /* Espacio entre links */
-  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-header nav a {
-  color: #73c2d6;
-  padding: 5px 10px;
-  border-radius: 5px;
+
+.header-logo {
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 
-header nav a:hover{
-  background-color: #544254;
-
+/* NAV */
+.header-nav {
+  display: flex;
+  gap: 1.2rem;
 }
 
-header nav a.active {
+/* LINKS */
+.header-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.header-nav a:hover {
+ background-color: #544254;
+}
+
+.header-nav a.active {
   background-color: #c50ea3;
-
 }
-/* @media (max-width: 400px) {
-  nav {
+
+/* BOTÓN HAMBURGUESA */
+.header-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .header-toggle {
+    display: block;
+  }
+  .header{
+    height: 65px;
+  }
+  .header-nav {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    display: none;
   }
 
-  nav a {
-    width: 100%;
-    padding: 10px;
-  }
-} */
-@media (max-width: 400px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header nav {
-    width: 100%;
-    justify-content: flex-start;
+  .header-nav.open {
+    display: flex;
   }
 }

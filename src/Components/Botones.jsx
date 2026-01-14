@@ -1,7 +1,6 @@
 import { adminActions } from '../hooks/adminActions';
 import { UserAction } from '../hooks/userAction';
 import {useNavigate} from 'react-router-dom'
-// import './Css/Botones.css'
 import { useState } from 'react';
 
 export const Botones = ({ rol, id_articulo, id_receta, onFavorito, onEditar, onEliminar }) => {
@@ -9,23 +8,13 @@ export const Botones = ({ rol, id_articulo, id_receta, onFavorito, onEditar, onE
       const navigate = useNavigate()
       const {eliminarArticulo} = adminActions()
       const[error, setError] = useState(null)
-      const[articulos, setArticulos] = useState([])
 
   const handleFavorito = async (articuloId, idReceta) => {
     console.log(articuloId, idReceta)
     try {
       await guardarEnFavoritos(articuloId, idReceta);
       if(idReceta) {
-        // const resp = await spooncular(`/${id}/information`);
-        // const titulo = await traducir(receta.title, "EN", "ES")
-        // const contenido = await traducir(receta.instructions, "EN", "ES")
-        // setReceta({ 
-        //             id_receta: id,
-        //             titulo: resp.title,
-        //             imagen_url: resp.image,
-        //             contenido
-        //         })
-        // await guardarRecetaEnBd(idReceta)
+       await guardarRecetaEnBd(idReceta)
       }
     } catch (error) {
       console.log(error);

@@ -1,0 +1,5120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="AdminBuscar"><span class="type-signature">(constant) </span>AdminBuscar<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de administración para buscar y gestionar usuarios.* Proporciona una interfaz que alterna entre la visualización de todos los usuariosy los resultados específicos de una búsqueda basada en el nombre.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_AdminBuscar.jsx.html">pages/AdminBuscar.jsx</a>, <a href="pages_AdminBuscar.jsx.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="AdminCrear"><span class="type-signature">(constant) </span>AdminCrear<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente administrativo para la creación de nuevos artículos.* Gestiona un formulario multimedia que incluye carga de archivos (imágenes)y un editor de texto enriquecido (WYSIWYG). Controla el estado de carga (loading)y la validación de campos obligatorios antes de enviar los datos al servidor.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_AdminCrear.jsx.html">pages/AdminCrear.jsx</a>, <a href="pages_AdminCrear.jsx.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="AdminCrearUsuario"><span class="type-signature">(constant) </span>AdminCrearUsuario<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente administrativo para la creación de nuevos usuarios.* Gestiona un formulario controlado para capturar los datos de un nuevo perfil,transforma los tipos de datos necesarios (como el rol a número) y redirigeal listado general tras una creación exitosa.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_AdminCrearUsuario.jsx.html">pages/AdminCrearUsuario.jsx</a>, <a href="pages_AdminCrearUsuario.jsx.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="AdminEditar"><span class="type-signature">(constant) </span>AdminEditar<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente administrativo para editar un artículo existente.* Gestiona la carga de datos del artículo, la edición de texto enriquecidoy la subida de archivos de imagen para actualizar el contenido en el servidor.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_AdminEditar.jsx.html">pages/AdminEditar.jsx</a>, <a href="pages_AdminEditar.jsx.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="AdminEditarUsuario"><span class="type-signature">(constant) </span>AdminEditarUsuario<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de administración para editar los datos de un usuario.* Permite al administrador modificar el nombre, email y el rol (Usuario/Admin) de un usuario específico identificado por su ID en la URL.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_AdminEditarUsuario.jsx.html">pages/AdminEditarUsuario.jsx</a>, <a href="pages_AdminEditarUsuario.jsx.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="AppRoutes"><span class="type-signature">(constant) </span>AppRoutes<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Gestor de rutas principal de la aplicación.* Este componente centraliza la definición de todas las URLs. Se divide en tres bloques principales:1. **Rutas Públicas**: Accesibles por cualquier usuario (Home, Detalles, Login).2. **Rutas de Usuario**: Protegidas y anidadas bajo el prefijo `/user`.3. **Rutas de Administrador**: Protegidas y anidadas bajo el prefijo `/admin`.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_AppRoutes.jsx.html">routes/AppRoutes.jsx</a>, <a href="routes_AppRoutes.jsx.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="global.html#Proteccion">Proteccion</a> Para la lógica de validación de sesión.</li>
+        
+            <li><a href="global.html#AuthLayout">AuthLayout</a> Como contenedor de las rutas anidadas.</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ArtculosHome"><span class="type-signature">(constant) </span>ArtculosHome<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente que renderiza la sección de noticias o artículos destacados en la Home.* Realiza una petición al endpoint público de inicio y muestra una selecciónlimitada de las publicaciones más recientes para fomentar la lectura.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_ArtculosHome.jsx.html">Components/ArtculosHome.jsx</a>, <a href="Components_ArtculosHome.jsx.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="ArticuloDetalle"><span class="type-signature">(constant) </span>ArticuloDetalle<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de tarjeta para visualización individual de recetas.* Este componente gestiona la navegación al detalle de la receta y la lógica para añadir recetas externas a la base de datos local al interactuar con ellas.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_ArticuloDetalle.jsx.html">Components/ArticuloDetalle.jsx</a>, <a href="Components_ArticuloDetalle.jsx.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="AuthLayout"><span class="type-signature">(constant) </span>AuthLayout<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Layout* Utiliza el componente Outlet de react-router-dom para renderizar las sub-rutas configuradas.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_AuthLayout.jsx.html">routes/AuthLayout.jsx</a>, <a href="routes_AuthLayout.jsx.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="BuscarArticulo"><span class="type-signature">(constant) </span>BuscarArticulo<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de búsqueda y visualización de artículos.* Este componente actúa como controlador de la vista de búsqueda. Gestiona el términode búsqueda ingresado y decide si mostrar una galería de resultados específicoso una vista de artículos generales (por defecto).
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_UserBuscar.jsx.html">pages/UserBuscar.jsx</a>, <a href="pages_UserBuscar.jsx.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>return (&lt;BuscarArticulo />)</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="Card"><span class="type-signature">(constant) </span>Card<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de tarjeta para visualización individual de recetas.* Este componente gestiona la navegación al detalle de la receta y la lógica para añadir recetas externas a la base de datos local al interactuar con ellas.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_Card.jsx.html">Components/Card.jsx</a>, <a href="Components_Card.jsx.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="Errores"><span class="type-signature">(constant) </span>Errores<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de interfaz para la visualización de errores.* Proporciona una estructura visual estandarizada para informar al usuario sobre fallos en la aplicación, permitiendo mostrar tanto un mensaje genérico como detalles técnicos específicos.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_Errores.jsx.html">Components/Errores.jsx</a>, <a href="Components_Errores.jsx.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="Favoritos"><span class="type-signature">(constant) </span>Favoritos<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de la página de Favoritos del usuario.* Gestiona la visualización, navegación y eliminación de artículos marcados como favoritos.Utiliza hooks personalizados para la autenticación y acciones de usuario, y realizauna petición fetch al montar el componente para obtener los datos.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_UserFavoritos.jsx.html">pages/UserFavoritos.jsx</a>, <a href="pages_UserFavoritos.jsx.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GaleriaArticulos"><span class="type-signature">(constant) </span>GaleriaArticulos<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente que renderiza una galería de artículos filtrada por título.* Realiza peticiones asíncronas al backend cada vez que el término de búsqueda cambia,gestionando la visualización de resultados y las acciones asociadas a cada artículo.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_GaleriaArticulos.jsx.html">Components/GaleriaArticulos.jsx</a>, <a href="Components_GaleriaArticulos.jsx.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GaleriaUsuarios"><span class="type-signature">(constant) </span>GaleriaUsuarios<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente que renderiza una galería de usuarios filtrada por búsqueda.* Este componente observa cambios en la prop `usuario` para realizar peticionesal backend y mostrar los resultados coincidentes en un panel administrativo.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_GaleriaUsuarios.jsx.html">Components/GaleriaUsuarios.jsx</a>, <a href="Components_GaleriaUsuarios.jsx.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="Header"><span class="type-signature">(constant) </span>Header<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de cabecera y navegación principal.* Este componente gestiona la barra de navegación superior, adaptando los enlacesdisponibles según el estado de autenticación y el rol del usuario (RBAC - Role Based Access Control).* Roles gestionados:- `public`: Usuarios no autenticados (Inicio, Login, Registro).- `user` (Rol 1): Usuarios estándar (Búsqueda y Favoritos).- `admin` (Rol 2): Panel de control (Gestión de artículos y usuarios).* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_Header.jsx.html">Components/Header.jsx</a>, <a href="Components_Header.jsx.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="HomePage"><span class="type-signature">(constant) </span>HomePage<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente principal de la página de inicio (Landing Page).* Este componente organiza la disposición visual de la página de bienvenida, integrando las secciones destacadas de artículos y recetas. Actúa como el punto de entrada público de la aplicación.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_HomePage.jsx.html">pages/HomePage.jsx</a>, <a href="pages_HomePage.jsx.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>return (&lt;HomePage />)</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="Layout"><span class="type-signature">(constant) </span>Layout<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de estructura principal (Wrapper).
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_Layout.jsx.html">routes/Layout.jsx</a>, <a href="routes_Layout.jsx.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="LoginPage"><span class="type-signature">(constant) </span>LoginPage<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Página de Inicio de Sesión (Login).* Gestiona la autenticación de usuarios, la validación de credencialesy la redirección basada en roles mediante la decodificación del token JWT.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_LoginPage.jsx.html">pages/LoginPage.jsx</a>, <a href="pages_LoginPage.jsx.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="MostrarArticulos"><span class="type-signature">(constant) </span>MostrarArticulos<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente principal para listar artículos en formato de galería.* Este componente se encarga de:1. Obtener todos los artículos desde el endpoint de inicio.2. Gestionar la navegación al detalle del artículo.3. Proveer una función de actualización local tras la eliminación de un ítem.4. Adaptar las acciones disponibles delegando en el componente Botones.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_MostrarArticulos.jsx.html">Components/MostrarArticulos.jsx</a>, <a href="Components_MostrarArticulos.jsx.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="MostrarUsuarios"><span class="type-signature">(constant) </span>MostrarUsuarios<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente administrativo para visualizar y gestionar la lista de usuarios.* Este componente permite al administrador:1. Listar todos los usuarios registrados mediante una petición autenticada.2. Navegar al formulario de edición de cada usuario.3. Eliminar usuarios, actualizando el estado local de forma reactiva.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_MostrarUsuarios.jsx.html">Components/MostrarUsuarios.jsx</a>, <a href="Components_MostrarUsuarios.jsx.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="Proteccion"><span class="type-signature">(constant) </span>Proteccion<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de Orden Superior (HOC) para la protección de rutas.* Verifica la existencia de una sesión activa (token) y, opcionalmente, valida si el rol del usuario coincide con el nivel de acceso requerido.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_PublicProtection.jsx.html">Components/PublicProtection.jsx</a>, <a href="Components_PublicProtection.jsx.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="RecetaDetalle"><span class="type-signature">(constant) </span>RecetaDetalle<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de vista detallada de una receta.* Extrae el ID de la URL, realiza una petición al backend para obtener los datosy renderiza el contenido procesando etiquetas HTML mediante el componente Markup.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_RecetaDetalle.jsx.html">pages/RecetaDetalle.jsx</a>, <a href="pages_RecetaDetalle.jsx.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="RecetasFavoritas"><span class="type-signature">(constant) </span>RecetasFavoritas<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente que muestra la galería de recetas guardadas como favoritas por el usuario.* Permite visualizar el listado, navegar al detalle de cada receta yeliminarlas de la lista de favoritos.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_RecetasFavoritas.jsx.html">pages/RecetasFavoritas.jsx</a>, <a href="pages_RecetasFavoritas.jsx.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="RecetasHome"><span class="type-signature">(constant) </span>RecetasHome<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente que renderiza la sección de recetas destacadas en la página de inicio.* Se encarga de realizar la petición inicial al backend para obtener el listado de recetas y limita la visualización a las primeras 4 unidades mediante `slice`.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_RecetasHome.jsx.html">Components/RecetasHome.jsx</a>, <a href="Components_RecetasHome.jsx.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="RegisterPage"><span class="type-signature">(constant) </span>RegisterPage<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Página de Registro de usuarios.* Gestiona la creación de nuevas cuentas, la obtención del token JWTy la redirección automática según el rol decodificado del token.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_RegisterPage.jsx.html">pages/RegisterPage.jsx</a>, <a href="pages_RegisterPage.jsx.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="TarjetaArticulo"><span class="type-signature">(constant) </span>TarjetaArticulo<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente funcional que renderiza una galería de tarjetas de artículos.* Este componente detecta automáticamente el contexto (Admin o Usuario) mediante la URLpara mostrar acciones específicas como editar, eliminar o guardar en favoritos.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_TarjetaArticulo.jsx.html">Components/TarjetaArticulo.jsx</a>, <a href="Components_TarjetaArticulo.jsx.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="UserAction"><span class="type-signature">(constant) </span>UserAction<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Hook personalizado para gestionar acciones de usuario relacionadas con contenidos externos y favoritos.* Este hook centraliza la lógica de:1. Traducción de textos mediante DeepL (vía backend).2. Búsqueda de recetas en la API externa de Spoonacular.3. Gestión de favoritos (añadir/eliminar).4. Persistencia de recetas externas en la base de datos local.* @kind function
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hooks_userAction.js.html">hooks/userAction.js</a>, <a href="hooks_userAction.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="UserBuscarRecetas"><span class="type-signature">(constant) </span>UserBuscarRecetas<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Componente de búsqueda avanzada de recetas.* Permite a los usuarios buscar recetas utilizando la API de Spoonacular,aplicando filtros de dieta, intolerancias, micronutrientes y parámetros nutricionales.Realiza traducciones automáticas de términos de búsqueda (ES -> EN) y de resultados (EN -> ES).
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_UserBuscarRecetas.jsx.html">pages/UserBuscarRecetas.jsx</a>, <a href="pages_UserBuscarRecetas.jsx.html#line59">line 59</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="UserProvider"><span class="type-signature">(constant) </span>UserProvider<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Proveedor de contexto para la gestión global del usuario y autenticación.* Este componente envuelve la aplicación y proporciona un estado centralizadopara el token de sesión y los datos del usuario, manejando la persistenciamediante cookies y la validación de expiración del token JWT.* @component
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="contexts_UserProvider.jsx.html">contexts/UserProvider.jsx</a>, <a href="contexts_UserProvider.jsx.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="adminActions"><span class="type-signature">(constant) </span>adminActions<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Hook personalizado que centraliza las acciones de administración.* Proporciona métodos para la gestión de artículos (CRUD) y usuarios, manejando la lógica de multipart/form-data para imágenes y la comunicación con los endpoints protegidos del backend.* @kind function
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hooks_adminActions.js.html">hooks/adminActions.js</a>, <a href="hooks_adminActions.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="userAuth"><span class="type-signature">(constant) </span>userAuth<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Hook personalizado para gestionar la lógica de autenticación.* Este hook actúa como intermediario entre los componentes y el UserContext.Centraliza las llamadas a la API para login, registro y la gestión del token JWT.* @kind function
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>loginUser</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Función para iniciar sesión.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>registerUser</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Función para registrar un nuevo usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>logoutUser</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Función para cerrar la sesión.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>getRol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Obtiene el rol decodificado del token actual.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Datos del usuario autenticado.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>token</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Token JWT de la sesión activa.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Estado de errores de las peticiones.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hooks_userAuth.js.html">hooks/userAuth.js</a>, <a href="hooks_userAuth.js.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="App"><span class="type-signature"></span>App<span class="signature">()</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Componente principal de la aplicación.
+* Actúa como el punto de entrada de la jerarquía de componentes,
+estableciendo la estructura global mediante el componente <a href="global.html#Layout">Layout</a>
+y gestionando la navegación a través de <a href="global.html#AppRoutes">AppRoutes</a>.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="App.jsx.html">App.jsx</a>, <a href="App.jsx.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    El árbol de componentes de la aplicación.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">JSX.Element</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="conectar"><span class="type-signature"></span>conectar<span class="signature">(url, metodo-, body, token-)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Helper universal para realizar peticiones fetch asíncronas.* * Esta función centraliza la lógica de comunicación con la API, manejandoautomáticamente la serialización de JSON, la configuración de cabecerasde autenticación y la resolución de la respuesta.* @async
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">La URL completa del endpoint al que se realiza la petición.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>metodo-</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Método HTTP (GET, POST, PUT, DELETE).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto con los datos a enviar (se convertirá a JSON).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>token-</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Token JWT para cabecera de Authorization.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="helpers_fetch.js.html">helpers/fetch.js</a>, <a href="helpers_fetch.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Lanza un error si la respuesta del servidor no es satisfactoria (ok: false).
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Promesa que resuelve con los datos parseados de la respuesta.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="handleSubmit"><span class="type-signature"></span>handleSubmit<span class="signature">()</span><span class="type-signature"> &rarr; {function}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Generador de manejadores para el envío de formularios de búsqueda.* * Esta es una función de orden superior (Currying) que recibe una función de callback y retorna el manejador de eventos `onSubmit`.* * Proceso de los datos:1. Previene el refresco de la página.2. Extrae los datos mediante `FormData`.3. Normaliza el texto (quita espacios y convierte a minúsculas).4. Ejecuta el callback con el término limpio.5. Resetea el formulario.* @param {Function} buscador - Función callback que recibirá el término de búsqueda procesado.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hooks_form.js.html">hooks/form.js</a>, <a href="hooks_form.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Una función que acepta un evento de React/DOM (`ev`) como argumento.* @exampleconst onSearch = (termino) => console.log(termino);<form onSubmit={handleSubmit(onSearch)}> ... </form>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id="Articulo">Articulo</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id_articulo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Identificador único del artículo.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>titulo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Título del artículo.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>imagen_url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">URL de la imagen de portada.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_MostrarArticulos.jsx.html">Components/MostrarArticulos.jsx</a>, <a href="Components_MostrarArticulos.jsx.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Articulo">Articulo</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id_articulo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Identificador único del artículo.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>titulo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Título descriptivo.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>imagen_url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">URL de la imagen de portada.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_TarjetaArticulo.jsx.html">Components/TarjetaArticulo.jsx</a>, <a href="Components_TarjetaArticulo.jsx.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="ArticuloData">ArticuloData</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>titulo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">El título del artículo.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contenido</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">El cuerpo del artículo en formato HTML.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_AdminEditar.jsx.html">pages/AdminEditar.jsx</a>, <a href="pages_AdminEditar.jsx.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="CustomError">CustomError</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mensaje</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Título o descripción corta del error.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>detalles</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Información adicional sobre cómo solucionar el error.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_UserBuscar.jsx.html">pages/UserBuscar.jsx</a>, <a href="pages_UserBuscar.jsx.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="DecodedToken">DecodedToken</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>rol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">El nivel de acceso del usuario (1 para Usuario, 2 para Admin).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nombre</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre de usuario extraído del token.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>exp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Fecha de expiración del token.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_RegisterPage.jsx.html">pages/RegisterPage.jsx</a>, <a href="pages_RegisterPage.jsx.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="JWTPayload">JWTPayload</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>rol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">El identificador de rol (1: Usuario, 2: Admin).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_LoginPage.jsx.html">pages/LoginPage.jsx</a>, <a href="pages_LoginPage.jsx.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="LoginResponse">LoginResponse</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>usuario</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Datos del usuario autenticado.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tokenRecibido</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">El token JWT devuelto por el servidor.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_LoginPage.jsx.html">pages/LoginPage.jsx</a>, <a href="pages_LoginPage.jsx.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="NuevoUsuario">NuevoUsuario</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>nombre</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre completo del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Dirección de correo electrónico.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id_rol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">El ID del rol seleccionado (como string para el select).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contrasenia</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Contraseña para la nueva cuenta.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_AdminCrearUsuario.jsx.html">pages/AdminCrearUsuario.jsx</a>, <a href="pages_AdminCrearUsuario.jsx.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="OptionItem">OptionItem</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre legible para el usuario (en español).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Valor técnico requerido por la API de Spoonacular.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_UserBuscarRecetas.jsx.html">pages/UserBuscarRecetas.jsx</a>, <a href="pages_UserBuscarRecetas.jsx.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Receta">Receta</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id_receta</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID de la receta en la BD local.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID de la receta proveniente de API externa (Spoonacular, etc).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>titulo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre de la receta.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>imagen_url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">URL de la imagen.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_Card.jsx.html">Components/Card.jsx</a>, <a href="Components_Card.jsx.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="RecetaDetalleData">RecetaDetalleData</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id_receta</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Identificador único de la receta.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>titulo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">El nombre o título de la receta.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>imagen_url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">URL de la imagen de cabecera.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contenido</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Cuerpo de la receta en formato HTML/Texto.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_RecetaDetalle.jsx.html">pages/RecetaDetalle.jsx</a>, <a href="pages_RecetaDetalle.jsx.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="RecetaFavorita">RecetaFavorita</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id_receta</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Identificador único de la receta.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>titulo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre de la receta.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>imagen_url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Enlace a la imagen de la receta.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_RecetasFavoritas.jsx.html">pages/RecetasFavoritas.jsx</a>, <a href="pages_RecetasFavoritas.jsx.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="SearchError">SearchError</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mensaje</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Título o resumen corto del error.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>detalles</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Explicación detallada de cómo corregir el error.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="pages_AdminBuscar.jsx.html">pages/AdminBuscar.jsx</a>, <a href="pages_AdminBuscar.jsx.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Usuario">Usuario</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id_usuario</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Identificador único del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nombre</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Nombre completo o username.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Correo electrónico del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id_rol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Identificador del rol (ej: 1 para user, 2 para admin).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Components_MostrarUsuarios.jsx.html">Components/MostrarUsuarios.jsx</a>, <a href="Components_MostrarUsuarios.jsx.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AdminBuscar">AdminBuscar</a></li><li><a href="global.html#AdminCrear">AdminCrear</a></li><li><a href="global.html#AdminCrearUsuario">AdminCrearUsuario</a></li><li><a href="global.html#AdminEditar">AdminEditar</a></li><li><a href="global.html#AdminEditarUsuario">AdminEditarUsuario</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppRoutes">AppRoutes</a></li><li><a href="global.html#ArtculosHome">ArtculosHome</a></li><li><a href="global.html#ArticuloDetalle">ArticuloDetalle</a></li><li><a href="global.html#AuthLayout">AuthLayout</a></li><li><a href="global.html#BuscarArticulo">BuscarArticulo</a></li><li><a href="global.html#Card">Card</a></li><li><a href="global.html#Errores">Errores</a></li><li><a href="global.html#Favoritos">Favoritos</a></li><li><a href="global.html#GaleriaArticulos">GaleriaArticulos</a></li><li><a href="global.html#GaleriaUsuarios">GaleriaUsuarios</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#HomePage">HomePage</a></li><li><a href="global.html#Layout">Layout</a></li><li><a href="global.html#LoginPage">LoginPage</a></li><li><a href="global.html#MostrarArticulos">MostrarArticulos</a></li><li><a href="global.html#MostrarUsuarios">MostrarUsuarios</a></li><li><a href="global.html#Proteccion">Proteccion</a></li><li><a href="global.html#RecetaDetalle">RecetaDetalle</a></li><li><a href="global.html#RecetasFavoritas">RecetasFavoritas</a></li><li><a href="global.html#RecetasHome">RecetasHome</a></li><li><a href="global.html#RegisterPage">RegisterPage</a></li><li><a href="global.html#TarjetaArticulo">TarjetaArticulo</a></li><li><a href="global.html#UserAction">UserAction</a></li><li><a href="global.html#UserBuscarRecetas">UserBuscarRecetas</a></li><li><a href="global.html#UserProvider">UserProvider</a></li><li><a href="global.html#adminActions">adminActions</a></li><li><a href="global.html#conectar">conectar</a></li><li><a href="global.html#handleSubmit">handleSubmit</a></li><li><a href="global.html#userAuth">userAuth</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Tue Jan 13 2026 22:38:57 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

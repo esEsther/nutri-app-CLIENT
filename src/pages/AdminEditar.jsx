@@ -5,6 +5,19 @@ import { adminActions } from "../hooks/adminActions"
 import { EditorDetexto } from "../Components/EditorDeTexto"
 import { Errores } from "../Components/Errores"
 
+
+/**
+ * @typedef {Object} ArticuloData
+ * @property {string} titulo - El título del artículo.
+ * @property {string} contenido - El cuerpo del artículo en formato HTML.
+ */
+
+/**
+ * Componente administrativo para editar un artículo existente.
+ * * Gestiona la carga de datos del artículo, la edición de texto enriquecido
+ * y la subida de archivos de imagen para actualizar el contenido en el servidor.
+ * * @component
+ */
 export const AdminEditar = () => {
   const { id } = useParams();
   // console.log(id, ': este el id del artículo que quiero editar')
@@ -19,6 +32,10 @@ export const AdminEditar = () => {
 
 
   useEffect(()=>{
+    /**
+     * Función asíncrona para obtener el artículo desde la API.
+     * @async
+     */
     const fetchArticulo = async () => {
             try {
                 const resp = await conectar(`${urlBase}/admin/articulo/${id}`,
@@ -51,11 +68,18 @@ export const AdminEditar = () => {
     fetchArticulo();
   }, [id,token]);
 
-  
+  /**
+   * Maneja el cambio de la imagen seleccionada.
+   * @param {Object} e - Evento de cambio del input file.
+   */
   const handleImageChange = (e) => {
     setImagen(e.target.files[0]);
   };
 
+  /**
+   * Maneja los cambios en los campos de entrada de texto.
+   * @param {Object} e - Evento de cambio.
+   */
   const handleChange = (e) => {
         setArticulo({
         ...articulo,
@@ -64,6 +88,11 @@ export const AdminEditar = () => {
         
     };
 
+    /**
+   * Procesa el envío del formulario para guardar los cambios.
+   * @async
+   * @param {Object} e - Evento de envío del formulario.
+   */
   const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('hola desde handleSubmit', articulo, imagen)

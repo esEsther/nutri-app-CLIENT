@@ -4,21 +4,39 @@ import { MostrarArticulos } from '../Components/MostrarArticulos'
 import { GaleriaArticulos } from '../Components/GaleriaArticulos'
 import { Errores } from '../Components/Errores'
   
+
+
+/**
+ * @typedef {Object} CustomError
+ * @property {string} mensaje - Título o descripción corta del error.
+ * @property {string} [detalles] - Información adicional sobre cómo solucionar el error.
+ */
+
+/**
+ * Componente de búsqueda y visualización de artículos.
+ * * Este componente actúa como controlador de la vista de búsqueda. Gestiona el término
+ * de búsqueda ingresado y decide si mostrar una galería de resultados específicos
+ * o una vista de artículos generales (por defecto).
+ *
+ * @component
+ * @example
+ * return (
+ * <BuscarArticulo />
+ * )
+ */
 export const BuscarArticulo = () => {
+   
     const [titulo, setTitulo] = useState(null)
     const [error, setError] = useState(null)
 
-//     useEffect(() => {
-//     // Si venimos desde el NavLink de "Todos los artículos", reinicia el estado
-//     if (location.state?.reset) {
-//       setTitulo(null);
-//       setError(null);
-//     }
-//   }, [location.state]);
-
+    /**
+     * Valida y actualiza el término de búsqueda.
+     * Se pasa como prop al componente `Formulario`.
+     * * @param {string} busqueda - El texto ingresado por el usuario en el buscador.
+     * @returns {void}
+     */
     const handleTitulo = (busqueda) => {
         setError(null)
-        //si nuevaCategoria es null, undefined o false
         if (!busqueda) {
             setError({ mensaje: 'La búsqueda está vacía', detalles: 'Escribe un artículo que te pueda interesar.' })
             return //para no ejecutar el resto del codigo
@@ -26,11 +44,15 @@ export const BuscarArticulo = () => {
         setTitulo(busqueda)
     }
 
+    /**
+     * Valida y actualiza el término de búsqueda.
+     * Se pasa como prop al componente `Formulario`.
+     * * @param {string} busqueda - El texto ingresado por el usuario en el buscador.
+     * @returns {void}
+     */
     const borrarError = () =>{
         setError(null)
     }
-
-    // console.log(titulo)
 
   return (
     <div className='buscarContainer'>
@@ -44,8 +66,6 @@ export const BuscarArticulo = () => {
             ? (<GaleriaArticulos titulo={titulo} clearError = {borrarError}/>)
             : (<MostrarArticulos/>)
          }
-
-        
 
     </div>
   )

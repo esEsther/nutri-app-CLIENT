@@ -6,6 +6,14 @@ import { userAuth } from '../hooks/userAuth'
 import { Botones } from './Botones';
 import { Markup } from 'interweave'
 
+/**
+ * Componente de tarjeta para visualización individual de recetas.
+ * * Este componente gestiona la navegación al detalle de la receta y la lógica 
+ * para añadir recetas externas a la base de datos local al interactuar con ellas.
+ * * @component
+ * @param {Object} props - Propiedades del componente.
+ * @param {Receta} props.recipe - Objeto con la información de la receta.
+ */
 export const ArticuloDetalle = () => {
 
   const { id } = useParams();

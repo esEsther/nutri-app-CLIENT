@@ -4,6 +4,14 @@ import conectar from '../helpers/fetch'
 import {useNavigate} from 'react-router-dom'
 import {userAuth }from '../hooks/userAuth'
 
+/**
+ * Componente que renderiza una galería de usuarios filtrada por búsqueda.
+ * * Este componente observa cambios en la prop `usuario` para realizar peticiones
+ * al backend y mostrar los resultados coincidentes en un panel administrativo.
+ * * @component
+ * @param {Object} props - Propiedades del componente.
+ * @param {string} props.usuario - El término de búsqueda (nombre o email) para filtrar usuarios.
+ */
 export const GaleriaUsuarios = ({usuario}) => {
 const [usuarios, setUsuarios] = useState([]);
   const navigate = useNavigate();

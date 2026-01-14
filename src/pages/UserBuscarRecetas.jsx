@@ -3,9 +3,12 @@ import {UserAction} from '../hooks/userAction'
 import { Card } from "../Components/Card";
 import './css/buscarRecetas.css'
 import './css/UserRecetas.css'
-import { Paginacion } from "../Components/Paginacion";
 
-// Lista de intolerancias 
+/**
+ * @typedef {Object} OptionItem
+ * @property {string} label - Nombre legible para el usuario (en español).
+ * @property {string} value - Valor técnico requerido por la API de Spoonacular.
+ */
 const INTOLERANCES = [
 { label: "Gluten", value: "gluten" },
   { label: "Lácteos", value: "dairy" },
@@ -19,7 +22,7 @@ const INTOLERANCES = [
   { label: "Trigo", value: "wheat" }
 ]
 
-// Micronutrientes seleccionables
+
 const MICRONUTRIENTS = [
   { label: "Magnesio", value: "magnesium" },
   { label: "Vitamina C", value: "vitaminC" },
@@ -31,7 +34,7 @@ const MICRONUTRIENTS = [
 ];
 
 
-// Dietas / preferencias
+
 const DIETS = [
   { label: "Vegana", value: "vegan" },
   { label: "Vegetariana", value: "vegetarian" },
@@ -41,13 +44,21 @@ const DIETS = [
   { label: "Baja en azúcar", value: "low-sugar" }
 ];
 
-
+/**
+ * Componente de búsqueda avanzada de recetas.
+ * * Permite a los usuarios buscar recetas utilizando la API de Spoonacular,
+ * aplicando filtros de dieta, intolerancias, micronutrientes y parámetros nutricionales.
+ * Realiza traducciones automáticas de términos de búsqueda (ES -> EN) y de resultados (EN -> ES).
+ *
+ * @component
+ * @param {Object} props - Propiedades del componente.
+ * @param {Function} props.onSelectRecipe - Función callback que se dispara al seleccionar una receta de la lista.
+ * * @returns {JSX.Element} Interfaz de búsqueda con formulario de filtros y galería de resultados.
+ */
 export const UserBuscarRecetas = ({ onSelectRecipe }) => {
   
-  const [page, setPage] = useState(1);
-const [pageSize, setPageSize] = useState(12); // recetas por página
-const [totalResults, setTotalResults] = useState(0);
-    const [titulo, setTitulo] = useState("");
+  // --- ESTADOS DE FILTRO ---
+  const [titulo, setTitulo] = useState("");
   const [incluir, setIncluir] = useState("");
   const [excluir, setExcluir] = useState("");
   const [selectedIntolerances, setSelectedIntolerances] = useState([]);
@@ -56,29 +67,64 @@ const [totalResults, setTotalResults] = useState(0);
   const [minNutrients, setMinNutrients] = useState({ protein: "", fiber: "", sugar: "" });
   const [maxGlycemicIndex, setMaxGlycemicIndex] = useState("");
   const [maxTime, setMaxTime] = useState("");
-  const [budget, setBudget] = useState("");
+
+  // --- ESTADOS DE CONTROL ---
   const [recetas, setRecetas] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   const [error, setError] = useState(null);
+
+  // --- HOOKS Y VARIABLES EXTERNAS ---
   const apiKeySpooncular = import.meta.env.VITE_SPOONCULAR;
-  const {spooncular, traducir}=UserAction()
+  const { spooncular, traducir } = UserAction();
+
+  // const [titulo, setTitulo] = useState("");
+  // const [incluir, setIncluir] = useState("");
+  // const [excluir, setExcluir] = useState("");
+  // const [selectedIntolerances, setSelectedIntolerances] = useState([]);
+  // const [selectedMicronutrients, setSelectedMicronutrients] = useState([]);
+  // const [selectedDiets, setSelectedDiets] = useState([]);
+  // const [minNutrients, setMinNutrients] = useState({ protein: "", fiber: "", sugar: "" });
+  // const [maxGlycemicIndex, setMaxGlycemicIndex] = useState("");
+  // const [maxTime, setMaxTime] = useState("");
+  // // const [budget, setBudget] = useState("");
+  // const [recetas, setRecetas] = useState([]);
+  // const [loading, setLoading] = useState(false);
+  // const [showFilters, setShowFilters] = useState(false);
+  // const [error, setError] = useState(null);
+  // const apiKeySpooncular = import.meta.env.VITE_SPOONCULAR;
+  // const {spooncular, traducir}=UserAction()
 
   // Maneja los cambios de intolerancias
+  
+
+  /**
+   * Agrega o elimina un ítem de un array de selección (checkboxes).
+   * @param {string} item - Valor a conmutar.
+   * @param {Function} setter - Función de estado (useState) correspondiente.
+   */
   const toggleIntolerance = (item) => {
     setSelectedIntolerances(prev =>
       prev.includes(item) ? prev.filter(i => i !== item) : [...prev, item]
     );
   };
 
-  // Maneja toggles de micronutrientes
+  /**
+   * Agrega o elimina un ítem de un array de selección (checkboxes).
+   * @param {string} item - Valor a conmutar.
+   * @param {Function} setter - Función de estado (useState) correspondiente.
+   */
   const toggleMicronutrient = (item) => {
     setSelectedMicronutrients(prev =>
       prev.includes(item) ? prev.filter(i => i !== item) : [...prev, item]
     );
   };
 
-  // Maneja toggles de dietas
+  /**
+   * Agrega o elimina un ítem de un array de selección (checkboxes).
+   * @param {string} item - Valor a conmutar.
+   * @param {Function} setter - Función de estado (useState) correspondiente.
+   */
   const toggleDiet = (item) => {
     setSelectedDiets(prev =>
       prev.includes(item) ? prev.filter(i => i !== item) : [...prev, item]
@@ -86,7 +132,13 @@ const [totalResults, setTotalResults] = useState(0);
   };
 
 
- // Construye query
+ /**
+   * Construye la cadena de consulta (query string) para la API de Spoonacular.
+   * @param {string} titleEN - Título traducido al inglés.
+   * @param {string} aIncluirEN - Ingredientes a incluir traducidos.
+   * @param {string} aExcluirEN - Ingredientes a excluir traducidos.
+   * @returns {string} Query string formateada para la URL.
+   */
   const buildQuery = (titleEN, aIncluirEN, aExcluirEN) => {
     const query = new URLSearchParams();
     if (titleEN) query.append("title", titleEN);
@@ -121,7 +173,14 @@ const [totalResults, setTotalResults] = useState(0);
   };
 
 
-  // Maneja el submit del formulario
+ /**
+   * Procesa el formulario de búsqueda.
+   * 1. Traduce los términos de búsqueda al inglés.
+   * 2. Consulta la API externa.
+   * 3. Traduce los títulos de los resultados de vuelta al español.
+   * @async
+   * @param {React.FormEvent} e - Evento de submit del formulario.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -161,7 +220,7 @@ const [totalResults, setTotalResults] = useState(0);
     }
   };
 
-// console.log(recetas)
+
 
   return (
   <div className="user-buscar-recetas">
@@ -332,15 +391,7 @@ const [totalResults, setTotalResults] = useState(0);
         />
       ))}
     </div>
-    {/* { recetas.length > 0 && (    
-            <div className='paginacion'>
-                <Paginacion valorActual={pagina} pagina={handlePaginacion} totalPaginas={totalFotos} accion='primero'/>
-                <Paginacion valorActual={pagina} pagina={handlePaginacion} totalPaginas={totalFotos} accion='retroceder'/>
-                <p className='numPag'>{pagina}</p>
-                <Paginacion valorActual={pagina} pagina={handlePaginacion} totalPaginas={totalFotos} accion='avanzar'/>
-                <Paginacion valorActual={pagina} pagina={handlePaginacion} totalPaginas={totalFotos} accion='ultima'/>
-            </div>
-            )} */}
+  
   </div>
 );
 }

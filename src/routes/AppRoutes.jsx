@@ -12,11 +12,22 @@ import { LoginPage } from '../pages/LoginPage'
 import { AdminBuscar } from '../pages/AdminBuscar'
 import { AdminEditarUsuario } from '../pages/AdminEditarUsuario'
 import { UserBuscarRecetas } from '../pages/UserBuscarRecetas'
-import { PruebaTraducir } from '../pages/PruebaTraducir'
 import { AdminCrearUsuario } from '../pages/AdminCrearUsuario'
 import { RecetaDetalle } from '../pages/RecetaDetalle'
 import { RecetasFavoritas } from '../pages/RecetasFavoritas'
 
+
+/**
+ * Gestor de rutas principal de la aplicación.
+ * * Este componente centraliza la definición de todas las URLs. Se divide en tres bloques principales:
+ * 1. **Rutas Públicas**: Accesibles por cualquier usuario (Home, Detalles, Login).
+ * 2. **Rutas de Usuario**: Protegidas y anidadas bajo el prefijo `/user`.
+ * 3. **Rutas de Administrador**: Protegidas y anidadas bajo el prefijo `/admin`.
+ * * @component
+ * @see {@link Proteccion} Para la lógica de validación de sesión.
+ * @see {@link AuthLayout} Como contenedor de las rutas anidadas.
+ * @returns {JSX.Element} El sistema de ruteo configurado con React Router.
+ */
 export const AppRoutes = () => {
     return (
         <Routes>
@@ -36,10 +47,6 @@ export const AppRoutes = () => {
         <Route path="buscarRecetas" element={ <UserBuscarRecetas/> }/>
         <Route path="recetasFavoritas" element={ <RecetasFavoritas/> }/>
         
-
-        {/* <Route path="pruebaTraducir" element={ <PruebaTraducir/> }/> */}
-
-
       </Route> 
 
       <Route path="/admin" element={<Proteccion>

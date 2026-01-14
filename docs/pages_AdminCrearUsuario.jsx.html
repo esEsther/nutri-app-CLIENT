@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/AdminCrearUsuario.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/AdminCrearUsuario.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useState, useEffect, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import conectar from "../helpers/fetch";
+import { adminActions } from "../hooks/adminActions";
+import { UserContext } from "../contexts/UserContext";
+import { Input } from "../Components/Input";
+import { Errores } from "../Components/Errores";
+
+/**
+ * @typedef {Object} NuevoUsuario
+ * @property {string} nombre - Nombre completo del usuario.
+ * @property {string} email - Dirección de correo electrónico.
+ * @property {string} id_rol - El ID del rol seleccionado (como string para el select).
+ * @property {string} contrasenia - Contraseña para la nueva cuenta.
+ */
+
+/**
+ * Componente administrativo para la creación de nuevos usuarios.
+ * * Gestiona un formulario controlado para capturar los datos de un nuevo perfil,
+ * transforma los tipos de datos necesarios (como el rol a número) y redirige
+ * al listado general tras una creación exitosa.
+ * * @component
+ */
+export const AdminCrearUsuario = () => {
+  const { id } = useParams(); // id_usuario
+  const navigate = useNavigate();
+
+  const [usuario, setUsuario] = useState({
+                                            nombre: "",
+                                            email: "",
+                                            id_rol: "",
+                                            contrasenia: ""
+                                         });
+
+  const [error, setError] = useState(null);
+  const { crearUsuario} = adminActions();
+  const {urlBase}=useContext(UserContext)
+
+  /**
+   * Actualiza el estado del usuario conforme se escribe en los inputs.
+   * @param {Object} e - Evento de cambio del input.
+   */
+  const handleChange = (e) => {
+    setUsuario({
+      ...usuario,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  /**
+   * Procesa el envío del formulario.
+   * * Realiza la conversión de tipos (id_rol a Number) antes de enviar.
+   * @async
+   * @param {Object} e - Evento de envío del formulario.
+   */
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+
+    try {
+    const datos = {
+        nombre: usuario.nombre,
+        email: usuario.email,
+        id_rol: Number(usuario.id_rol),
+        contrasenia: usuario.contrasenia
+      }
+      const resp = await crearUsuario(datos);
+    //   console.log({resp})
+      navigate("/admin/todosLosUsuarios");
+    } catch (error) {
+      setError(error.message || "Error al crear usuario");
+    }
+  };
+
+  return (
+    &lt;main className="containerCrear">
+      &lt;p className="pcrear">Crear Usuario&lt;/p>
+      {error &amp;&amp; (&lt;Errores mensaje={error}/>)}
+      
+      &lt;div>
+      &lt;form  className="form-crear-usuario" onSubmit={handleSubmit}>
+            &lt;label>Nombre&lt;/label>
+            &lt;input
+              type="text"
+              name="nombre"
+              value={usuario.nombre}
+              onChange={handleChange}
+              required
+            />
+
+            &lt;label>Email&lt;/label>
+            &lt;input
+              type="email"
+              name="email"
+              value={usuario.email}
+              onChange={handleChange}
+              required
+            />
+
+            &lt;label>Contraseña&lt;/label>
+            &lt;input
+              type="text"
+              name="contrasenia"
+              value={usuario.contrasenia}
+              onChange={handleChange}
+              required
+            />
+
+            &lt;label>Rol&lt;/label>
+            &lt;select
+              name="id_rol"
+              value={usuario.id_rol}
+              onChange={handleChange}
+              required
+            >
+              &lt;option value="">Selecciona un rol&lt;/option>
+              &lt;option value="1">Usuario&lt;/option>
+              &lt;option value="2">Admin&lt;/option>
+            &lt;/select>
+
+            &lt;button>Guardar cambios&lt;/button>
+          &lt;/form>
+  
+      &lt;/div>
+    
+    &lt;/main>
+  );
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AdminBuscar">AdminBuscar</a></li><li><a href="global.html#AdminCrear">AdminCrear</a></li><li><a href="global.html#AdminCrearUsuario">AdminCrearUsuario</a></li><li><a href="global.html#AdminEditar">AdminEditar</a></li><li><a href="global.html#AdminEditarUsuario">AdminEditarUsuario</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#AppRoutes">AppRoutes</a></li><li><a href="global.html#ArtculosHome">ArtculosHome</a></li><li><a href="global.html#ArticuloDetalle">ArticuloDetalle</a></li><li><a href="global.html#AuthLayout">AuthLayout</a></li><li><a href="global.html#BuscarArticulo">BuscarArticulo</a></li><li><a href="global.html#Card">Card</a></li><li><a href="global.html#Errores">Errores</a></li><li><a href="global.html#Favoritos">Favoritos</a></li><li><a href="global.html#GaleriaArticulos">GaleriaArticulos</a></li><li><a href="global.html#GaleriaUsuarios">GaleriaUsuarios</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#HomePage">HomePage</a></li><li><a href="global.html#Layout">Layout</a></li><li><a href="global.html#LoginPage">LoginPage</a></li><li><a href="global.html#MostrarArticulos">MostrarArticulos</a></li><li><a href="global.html#MostrarUsuarios">MostrarUsuarios</a></li><li><a href="global.html#Proteccion">Proteccion</a></li><li><a href="global.html#RecetaDetalle">RecetaDetalle</a></li><li><a href="global.html#RecetasFavoritas">RecetasFavoritas</a></li><li><a href="global.html#RecetasHome">RecetasHome</a></li><li><a href="global.html#RegisterPage">RegisterPage</a></li><li><a href="global.html#TarjetaArticulo">TarjetaArticulo</a></li><li><a href="global.html#UserAction">UserAction</a></li><li><a href="global.html#UserBuscarRecetas">UserBuscarRecetas</a></li><li><a href="global.html#UserProvider">UserProvider</a></li><li><a href="global.html#adminActions">adminActions</a></li><li><a href="global.html#conectar">conectar</a></li><li><a href="global.html#handleSubmit">handleSubmit</a></li><li><a href="global.html#userAuth">userAuth</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Tue Jan 13 2026 22:38:57 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

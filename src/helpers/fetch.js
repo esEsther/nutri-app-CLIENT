@@ -1,6 +1,20 @@
   const apiKeySpooncular = import.meta.env.VITE_SPOONCULAR;
 
 
+  /**
+ * Helper universal para realizar peticiones fetch asíncronas.
+ * * * Esta función centraliza la lógica de comunicación con la API, manejando
+ * automáticamente la serialización de JSON, la configuración de cabeceras
+ * de autenticación y la resolución de la respuesta.
+ * * @async
+ * @function conectar
+ * @param {string} url - La URL completa del endpoint al que se realiza la petición.
+ * @param {string}  metodo- Método HTTP (GET, POST, PUT, DELETE).
+ * @param {Object|null} body - Objeto con los datos a enviar (se convertirá a JSON).
+ * @param {string|null} token- Token JWT para cabecera de Authorization.
+ * @returns {Promise<Object>} Promesa que resuelve con los datos parseados de la respuesta.
+ * @throws {Error} Lanza un error si la respuesta del servidor no es satisfactoria (ok: false).
+ */
 const conectar = async (urlApi, method = 'GET', body = null, token = null) => { //(ponemos unas variables por defecto)
   try {
     const options = {

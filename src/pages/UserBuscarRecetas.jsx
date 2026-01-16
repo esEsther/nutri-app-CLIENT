@@ -78,25 +78,7 @@ export const UserBuscarRecetas = ({ onSelectRecipe }) => {
   const apiKeySpooncular = import.meta.env.VITE_SPOONCULAR;
   const { spooncular, traducir } = UserAction();
 
-  // const [titulo, setTitulo] = useState("");
-  // const [incluir, setIncluir] = useState("");
-  // const [excluir, setExcluir] = useState("");
-  // const [selectedIntolerances, setSelectedIntolerances] = useState([]);
-  // const [selectedMicronutrients, setSelectedMicronutrients] = useState([]);
-  // const [selectedDiets, setSelectedDiets] = useState([]);
-  // const [minNutrients, setMinNutrients] = useState({ protein: "", fiber: "", sugar: "" });
-  // const [maxGlycemicIndex, setMaxGlycemicIndex] = useState("");
-  // const [maxTime, setMaxTime] = useState("");
-  // // const [budget, setBudget] = useState("");
-  // const [recetas, setRecetas] = useState([]);
-  // const [loading, setLoading] = useState(false);
-  // const [showFilters, setShowFilters] = useState(false);
-  // const [error, setError] = useState(null);
-  // const apiKeySpooncular = import.meta.env.VITE_SPOONCULAR;
-  // const {spooncular, traducir}=UserAction()
-
-  // Maneja los cambios de intolerancias
-  
+ 
 
   /**
    * Agrega o elimina un ítem de un array de selección (checkboxes).
